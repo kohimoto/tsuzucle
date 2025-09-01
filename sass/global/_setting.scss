@@ -20,9 +20,20 @@ $padding-sp: 15px;
  src: url(../fonts/YuGothM.ttc) format('truetype');
  font-style: normal;
 }
+// 英語
+@font-face {
+  font-family: 'felix-titling';
+  src: url('/fonts/felix-titling.woff') format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
 
 $base-font-family: "Yu Gothic", "游ゴシック体",  "メイリオ", sans-serif;
-//$second-font-family: "'Montserrat', sans-serif";
+$English-font-family-01: "'felix-titling', sans-serif";
+$English-font-family-02: "'Figtree', sans-serif";
+
 // ※検証ツールでしっかり反映されているか確認する
 
 // フォントウェイト
@@ -35,11 +46,13 @@ $bold: 700;
 // 色の指定
 ////////////////////
 
-$black: #1B303E;
+$black-01: #0A101C;
+$black-02: #1A1A1A;
+$black-03: #000000;
 $white: #fff;
-$color01: #7BC4F1;
-$color02: #C1E2F5;
-$color03: #64BBF0;
+$color01: #02112D; //navy
+$color02: #0E337A;
+$color03: #F4F6F8;
 $color04: #00649E;
 
 
@@ -112,7 +125,7 @@ html body .pc{
 }
 
 body {
-  color: $black;
+  color: $black-01;
   font-family: $base-font-family;
   //font-family: 'Noto Sans JP', sans-serif;
 }
