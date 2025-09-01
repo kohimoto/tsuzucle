@@ -117,13 +117,16 @@ select {
 html body .sp {
   display: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 767px) {
   html body .sp {
     display: block;
   }
 }
 
-@media screen and (min-width: 768px) {
+html body .pc {
+  display: block;
+}
+@media screen and (max-width: 767px) {
   html body .pc {
     display: none;
   }
@@ -164,7 +167,7 @@ a {
 }
 
 /* pcの電話番号発信対応 */
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 767px) {
   a[href^="tel:"] {
     pointer-events: none;
   }
@@ -253,7 +256,7 @@ a {
   display: -ms-flexbox;
   display: flex;
 }
-@media screen and (min-width: 1441px) {
+@media screen and (max-width: 1441px) {
   .l-header__list {
     font-size: 0.875rem;
   }
@@ -263,7 +266,7 @@ a {
   position: relative;
   margin: 0 0.625rem;
 }
-@media screen and (min-width: 1025px) {
+@media screen and (max-width: 1025px) {
   .l-header__list > li {
     margin: 0 1.25rem;
   }
@@ -368,7 +371,7 @@ a {
   padding: 0 1.25rem;
   margin: 0 auto;
 }
-@media screen and (min-width: 521px) {
+@media screen and (max-width: 521px) {
   .inner {
     padding: 0 3.75rem;
   }
@@ -498,7 +501,7 @@ a {
 .section-accordion {
   margin-top: 2.5rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 767px) {
   .section-accordion {
     margin-top: 3.125rem;
   }
