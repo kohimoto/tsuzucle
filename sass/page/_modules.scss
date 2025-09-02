@@ -3,7 +3,7 @@ body {
   // padding-top: rem(50); //ヘッダーの高さ分
 }
 .l-header {
-  width: 100%;
+  width: calc(100% - rem(160));
   height: rem(100);
   position: fixed;
   box-sizing: border-box;
@@ -46,7 +46,7 @@ body {
     }
   }
   &__logo {
-    width: rem(134) 
+    width: rem(134)
   }
   &.is-open {
     .l-header__logo {
@@ -170,6 +170,87 @@ body {
   }
 }
 
+.l-footer {
+  .l-footer__inner {
+    //padding: 0 rem(80);
+  }
+  .l-footer__menu {
+    display: flex;
+    align-items: center;
+    place-content: space-between;
+    padding: 0 rem(80);
+    .l-footer__logo {
+      width: rem(167);
+      img {
+        width: rem(167);
+      }
+    }
+  }
+  .l-footer__menu__list {
+    width: calc(100% - rem(167));
+    ul {
+      display: flex;
+      place-content: end;
+      gap: vwPC(85);
+      li {
+      }
+      a {
+        color: $white;
+        font-size: clamp(12px, rem(16), 16px);
+        white-space: nowrap;
+
+      }
+    }
+  }
+  .l-footer__link {
+    display: flex;
+    place-content: space-between;
+    padding: rem(250) rem(80) rem(28);
+    .l-footer__link-01 {
+      display: flex;
+      gap: rem(25);
+      a {
+        font-family: $English-font-family-02;
+        color: $white;
+        font-size: clamp(12px, rem(14), 14px);
+        display: flex;
+        align-items: center;
+        gap: vwPC(6);
+        .icon-window {
+          width: 11.701px;
+          height: 11.827px;
+          fill: currentColor;
+        }
+      }
+    }
+    .l-footer__link-02 {
+      display: flex;
+      gap: vwPC(24);
+      .icon-sns {
+        width: rem(18);
+        height: rem(18);
+      }
+    }
+  }
+
+  .l-footer__copy {
+    display: flex;
+    color: $white;
+    place-content: space-between;
+    border-top: 1px solid $color02;
+    padding: rem(20) 0;
+    p {
+      font-size: 11px;
+      padding-left: rem(80);
+    }
+    &__link {
+      font-size: 12px;
+      padding-right: rem(80);
+    }
+  }
+}
+
+
 // 共通セクション
 .inner {
   width: rem(1440);
@@ -227,5 +308,29 @@ body {
   to {
   opacity: 1;
   filter: blur(0);
+  }
+}
+
+
+.l-contact__parts {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  font-size:  clamp(14px, vwPC(16), 16px);
+  font-weight: $bold;
+  background: $color03;
+  color: $white;
+  bottom: 0;
+  display: flex;
+  place-content: center;
+  gap: rem(20);
+  align-items: center;
+  width: rem(211);
+  height: rem(129);
+  border-radius: rem(23);
+  line-height: 2;
+  img {
+    width: rem(22);
+    height: rem(22);
   }
 }

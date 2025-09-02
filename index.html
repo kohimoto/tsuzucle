@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
@@ -27,17 +26,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="./js/swiper-bundle.min.js"></script>
   <script defer src="./js/script.js"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <!-- ローディング -->
-  <div id="splash">
-    <div id="splash_text"></div>
-  </div>
-  <header class="l-header inner">
+  <header class="l-header">
     <div class="l-header__inner">
       <div class="l-header__logo">
         <img src="./images/common/logo.svg" alt="">
@@ -57,10 +55,6 @@
       </div>
     </div>
   </header>
-  <!-- ページトップボタン -->
-  <a class="pagetop" href="#">
-    <div class="pagetop__arrow"></div>
-  </a>
   <nav class="l-offcanvas">
     <div class="inner">
       <div class="l-offcanvas__list">
@@ -87,54 +81,107 @@
       </div>
     </div>
   </nav>
-  <div class="p-section">
+  <a href="#" class="l-contact__parts">
+    <img src="./images/common/chat-white.svg" alt="">
+    <span>お問い合せは<br>こちら</span>
+  </a>
+  <div class="p-section p-bg">
     <section class="p-section-keyvisual">
-      <div class="p-section-keyvisual__img">
-        <img src="./images/top/keyvisual.webp" alt="">
+      <div class="p-section-keyvisual__images">
+          <div class="slide">
+            <div class="slide-wrap top">
+              <ul>
+                <li><img src="https://recruit.mhdg.co.jp/wp-content/themes/lightning-pro-child-sample/images/top/slide01.webp" alt=""></li>
+                <li><img src="https://recruit.mhdg.co.jp/wp-content/themes/lightning-pro-child-sample/images/top/slide08.webp" alt=""></li>
+                <li><img src="https://recruit.mhdg.co.jp/wp-content/themes/lightning-pro-child-sample/images/top/slide02.webp" alt=""></li>
+                <li><img src="https://recruit.mhdg.co.jp/wp-content/themes/lightning-pro-child-sample/images/top/slide03.webp" alt=""></li>
+              </ul>
+              <ul>
+                <li><img src="https://recruit.mhdg.co.jp/wp-content/themes/lightning-pro-child-sample/images/top/slide01.webp" alt=""></li>
+                <li><img src="https://recruit.mhdg.co.jp/wp-content/themes/lightning-pro-child-sample/images/top/slide08.webp" alt=""></li>
+                <li><img src="https://recruit.mhdg.co.jp/wp-content/themes/lightning-pro-child-sample/images/top/slide02.webp" alt=""></li>
+                <li><img src="https://recruit.mhdg.co.jp/wp-content/themes/lightning-pro-child-sample/images/top/slide03.webp" alt=""></li>
+              </ul>
+            </div>
+            <div class="slide-wrap bottom">
+              <ul>
+                <li><img src="https://recruit.mhdg.co.jp/wp-content/themes/lightning-pro-child-sample/images/top/slide04.webp" alt=""></li>
+                <li><img src="https://recruit.mhdg.co.jp/wp-content/themes/lightning-pro-child-sample/images/top/slide05.webp" alt=""></li>
+                <li><img src="https://recruit.mhdg.co.jp/wp-content/themes/lightning-pro-child-sample/images/top/slide06.webp" alt=""></li>
+                <li><img src="https://recruit.mhdg.co.jp/wp-content/themes/lightning-pro-child-sample/images/top/slide07.webp" alt=""></li>
+              </ul>
+              <ul>
+                <li><img src="https://recruit.mhdg.co.jp/wp-content/themes/lightning-pro-child-sample/images/top/slide04.webp" alt=""></li>
+                <li><img src="https://recruit.mhdg.co.jp/wp-content/themes/lightning-pro-child-sample/images/top/slide05.webp" alt=""></li>
+                <li><img src="https://recruit.mhdg.co.jp/wp-content/themes/lightning-pro-child-sample/images/top/slide06.webp" alt=""></li>
+                <li><img src="https://recruit.mhdg.co.jp/wp-content/themes/lightning-pro-child-sample/images/top/slide07.webp" alt=""></li>
+              </ul>
+            </div>
+          </div>
       </div>
-      <div class="p-section-keyvisual__content color-black">
-        <h1 class="p-section-keyvisual__content__ttl">
-          価値あるものを、<br>
-          真の価値で届ける。
-        </h1>
-        <p class="p-section-keyvisual__content__txt">
-          伴走型コンサルティング。<br>
-          システム開発も、デジタルマーケティングも。
-        </p>
-        <!-- <a href="" class="p-section-keyvisual__content__btn">
-          <img src="./images/common/chat.svg" alt="">
-          <span>相談してみる</span>
-        </a> -->
-      </div><!-- / .p-section-keyvisual__content-->
+      <div class="p-section-keyvisual__img">
+        <img src="./images/top/keyvisual-logo.png" alt="">
+      </div>
       <div class="p-section-keyvisual__content color-white">
         <h1 class="p-section-keyvisual__content__ttl">
-          価値あるものを、<br>
-          真の価値で届ける。
+          <span>価</span>値あるものを、<br>
+          <span>真の</span>価値で届ける。
         </h1>
         <p class="p-section-keyvisual__content__txt">
           伴走型コンサルティング。<br>
-          システム開発も、デジタルマーケティングも。
+          <span>シ</span>ステム開発も、デジタルマーケティングも。
         </p>
-        <!-- <a href="" class="p-section-keyvisual__content__btn">
+        <a href="" class="p-section-keyvisual__content__btn">
           <img src="./images/common/chat.svg" alt="">
           <span>相談してみる</span>
-        </a> -->
+        </a>
       </div><!-- / .p-section-keyvisual__content-->
     </section><!-- /.p-section-keyvisual -->
     <section class="p-section-achievement">
-      <ul class="inner">
+      <ul class="inner p-section-achievement__text">
         <li>
-          導入社数<span class="en">50</span>社
+          導入社数<span class="en">50</span><small>社</small>
         </li>
         <li>
-          流通総額<span class="en">100</span>億円
+          流通総額<span class="en">100</span><small>億円</small>
         </li>
       </ul><!-- /.inner -->
+      <div class="logo-slider">
+        <div class="logo-slider">
+        <div class="logo-track">
+          <!-- group A -->
+          <ul class="logo-group">
+            <li><img src="./images/top/logo-tokyuagency.svg" alt="" width="74" height="60"></li>
+            <li><img src="./images/top/logo-toppan.svg" alt="" width="121" height="20"></li>
+            <li><img src="./images/top/logo-kyoto.svg" alt="" width="163" height="50"></li>
+            <li><img src="./images/top/logo-kanademono.svg" alt="" width="217" height="30"></li>
+            <li><img src="./images/top/logo-dinos.svg" alt="" width="122" height="40"></li>
+            <li><img src="./images/top/logo-fuji.svg" alt="" width="311" height="100"></li>
+          </ul>
+          <!-- group B (Aのコピー) -->
+          <ul class="logo-group" aria-hidden="true">
+            <li><img src="./images/top/logo-tokyuagency.svg" alt="" width="74" height="60"></li>
+            <li><img src="./images/top/logo-toppan.svg" alt="" width="121" height="20"></li>
+            <li><img src="./images/top/logo-kyoto.svg" alt="" width="163" height="50"></li>
+            <li><img src="./images/top/logo-kanademono.svg" alt="" width="217" height="30"></li>
+            <li><img src="./images/top/logo-dinos.svg" alt="" width="122" height="40"></li>
+            <li><img src="./images/top/logo-fuji.svg" alt="" width="311" height="100"></li>
+          </ul>
+          <ul class="logo-group" aria-hidden="true">
+            <li><img src="./images/top/logo-tokyuagency.svg" alt="" width="74" height="60"></li>
+            <li><img src="./images/top/logo-toppan.svg" alt="" width="121" height="20"></li>
+            <li><img src="./images/top/logo-kyoto.svg" alt="" width="163" height="50"></li>
+            <li><img src="./images/top/logo-kanademono.svg" alt="" width="217" height="30"></li>
+            <li><img src="./images/top/logo-dinos.svg" alt="" width="122" height="40"></li>
+            <li><img src="./images/top/logo-fuji.svg" alt="" width="311" height="100"></li>
+          </ul>
+        </div>
+      </div>
+
+</div>
+
     </section><!-- /.p-section-achievement -->
-    <a href="">
-      <img src="./images/common/chat-white.svg" alt="">
-      <span>お問い合せは<br>こちら</span>
-    </a>
+
     <section class="p-section-service">
       <div class="inner">
         <h2 class="c-ttl-01">
@@ -199,43 +246,71 @@
         </ul><!-- /.section-accordion -->
       </div><!-- /.inner -->
     </div><!-- /.p-section__faq -->
-    <div class="p-section__slider">
-      <div class="inner">
-        <div class="swiper">
-          <!-- サムネイル -->
-          <div class="swiper-container slider-thumbnail">
-            <div class="swiper-wrapper  swiper-wrapper-thumbnail">
-              <div class="swiper-slide"><img src="./images/top/slider_image1.png" alt=""></div>
-              <div class="swiper-slide"><img src="./images/top/slider_image2.png" alt=""></div>
-              <div class="swiper-slide"><img src="./images/top/slider_image3.png" alt=""></div>
-            </div>
-          </div>
-
-          <!-- スライダー-->
-          <div class="swiper-container slider">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="./images/top/slider_image1.png" alt=""></div>
-              <div class="swiper-slide"><img src="./images/top/slider_image2.png" alt=""></div>
-              <div class="swiper-slide"><img src="./images/top/slider_image3.png" alt=""></div>
-            </div>
-            <!-- ページネーション -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
+</div>
+<div class="p-section__topics">
+  <div class="inner">
+    <h1 class="section-ttl js__fadein">Topics</h1>
+    <p class="section-txt js__fadein">ダミープロカリテより新着トピックスをご紹介</p>
+  </div><!-- /.inner -->
+  <div class="section-slider">
+    <div class="swiper js__fadein">
+      <div class="slides-wrapper swiper-wrapper">
+        <div class="slide swiper-slide">
+          <img src="./images/top/swiper-01.png" alt="">
         </div>
-
-
-
+        <div class="slide swiper-slide">
+          <img src="./images/top/swiper-01.png" alt="">
+        </div>
+        <div class="slide swiper-slide">
+          <img src="./images/top/swiper-01.png" alt="">
+        </div>
+      </div>
+      <div class="swiper-button-next">
+        <svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L9 6.32258L1 12" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div><!-- /.section__menu__arrows__left -->
+      <div class="swiper-pagination"></div>
+    </div><!-- //swiper -->
+  </div>
+</div><!-- //p-section__topics -->
+<footer class="l-footer">
+  <div class="l-footer__inner">
+    <div class="l-footer__menu">
+      <div class="l-footer__logo">
+        <img src="./images/common/logo-white.svg" alt="Tsuzucle">
+      </div>
+      <div class="l-footer__menu__list">
+        <ul>
+          <li><a>トップ</a></li>
+          <li><a>サービス</a></li>
+          <li><a>導入事例</a></li>
+          <li><a>ニュース</a></li>
+          <li><a>資料</a></li>
+          <li><a>お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div><!-- //l-footer__menu -->
+    <div class="l-footer__link">
+      <div class="l-footer__link-01">
+        <a href="#">RECRUIT<img src="./images/common/icon-window.svg" alt="別窓" class="icon-window"></a>
+        <a href="#">TECH BLOG<img src="./images/common/icon-window.svg" alt="別窓" class="icon-window"></a>
+        <a href="#">forest 公式サイト<img src="./images/common/icon-window.svg" alt="別窓" class="icon-window"></a>
+      </div>
+      <div class="l-footer__link-02">
+        <a href="#"><img src="./images/common/icon-facebook.svg" alt="facebook" class="icon-sns icon-window"></a>
+        <a href="#"><img src="./images/common/icon-x.svg" alt="X" class="icon-sns icon-window"></a>
+        <a href="#"><img src="./images/common/icon-note.svg" alt="note" class="icon-sns icon-window"></a>
+      </div>
+    </div><!-- //l-footer__link -->
+    <div class="l-footer__copy">
+      <p>Copyright © XXXXXXX HOLDINGS CO., Ltd. All Rights Reserved.</p>
+      <div class="l-footer__copy__link">
+        <a href="#">プライバシーポリシー</a>
       </div>
     </div>
-  </div>
-
-
-
+  </div><!-- //l-footer__inner -->
+</footer>
 </body>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
 
 </html>

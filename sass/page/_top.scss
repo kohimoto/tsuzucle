@@ -8,51 +8,141 @@ body {
 .p-section {
   //max-width: 750px;
 }
+.p-bg {
 
+}
 .p-section-keyvisual {
   position: relative;
+  overflow: hidden;
+  aspect-ratio: 2880 / 1740;
   &__img {
-    width: 60vw;
+    width: 100vw;
     inset: 0 auto 0 0;
     color: $black-01;
     overflow: hidden;
+    position: absolute;
+    z-index: 2;
   }
   &__content {
     position: absolute;
     inset: 0;
     display: grid;
-    place-content: center start; 
-    max-width: 50vw;
+    place-content: center start;
+    max-width: 48vw;
     margin-left: auto;
-    pointer-events: none; 
+    pointer-events: none;
+    z-index: 3;
+    top: vwPC(-90);
+
     &__ttl {
       line-height: 1.25;
-      font-size: rem(64);
+      font-size:  clamp(35px, vwPC(64), 80px);
       letter-spacing: .05em;
-      font-weight: 700;
+      font-weight: $medium;
+      white-space: nowrap;
+      text-align: right;
+      span {
+        color: $black-01;
+      }
     }
     &__txt {
       margin-top: .8em;
-      font-size: rem(22);
+      font-size:  clamp(18px, vwPC(22), 30px);
       line-height: 1.7;
       letter-spacing: .06em;
+      text-align: right;
+      span {
+        color: $black-01;
+      }
     }
-
+    &__btn {
+      background: $white;
+      color: $black-01;
+      display: inline-flex;
+      font-weight: $bold;
+      font-size:  clamp(14px, vwPC(18), 20px);
+      align-items: center;
+      gap: rem(20);
+      width: rem(222);
+      height: rem(76);
+      place-content: center;
+      border-radius: rem(10);
+      margin: rem(30) 0 0 auto;
+      img {
+        width: rem(20);
+        height: rem(20);
+      }
+    }
     /* ―― 色の見せ分け ―― */
     /* 白：画像領域（左側）だけを表示 */
     &.color-white{
       color: #fff;
-      /* 右から (100%-画像幅) を切り落として、左側だけ表示 */
-      clip-path: inset(0 calc(100% - 60vw) 0 0);
     }
 
     /* 黒：画像外（右側）だけを表示 */
-    &.color-black{
-      color: $color01;
-      clip-path: inset(0 0 0 60vw);
+  }
+
+  .p-section-keyvisual__images {
+  width: vwPC(967);
+  display: flex;
+  position: relative;
+  z-index: 1;
+
+  .slide {
+    display: flex;
+    gap: rem(25);
+    width: 100%;
+
+    .slide-wrap {
+      width: 50%;
+
+      &.bottom {
+        justify-content: flex-end;
+
+        ul {
+          animation: slide-flow-bottom 25s linear infinite;
+        }
+      }
+
+      &.top {
+        ul {
+          animation: slide-flow 25s linear infinite;
+        }
+      }
+
+      ul {
+        display: flex; // gridではなくflexに変更
+        flex-direction: column-reverse;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        gap: rem(30);
+        will-change: transform;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+      }
     }
   }
-  
+}
+
+}
+
+@keyframes slide-flow {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-100% - rem(30)));
+  }
+}
+
+@keyframes slide-flow-bottom {
+  0% {
+    transform: translateY(calc(-100% - rem(30)));
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 // スライダー（swiper使用）
@@ -243,29 +333,82 @@ body {
 // }
 
 
+:root {
+  --logo-gap: 40px;     /* ロゴ間の間隔 */
+  --logo-h: 40px;       /* ロゴ高さ */
+  --duration: 30s;      /* 流れる速度 */
+}
+.p-section-achievement {
+  background: $color04;
+  padding: rem(60) 0;
 
-/*========= LoadingのためのCSS ===============*/
+  &__text {
+    font-size:  clamp(18px, rem(26), 26px);
+    display: flex;
+    gap: vwPC(160);
+    place-content: center;
+    margin-bottom: rem(30);
+    li {
+      display: flex;
+      align-items: center;
+    }
+    .en {
+      font-size:  clamp(40px, rem(75), 75px);
+      color: $color03;
+      margin: 0 rem(10);
+    }
+    small {
+      font-size:  clamp(16px, rem(22), 22px);
+    }
+  }
+  .logo-slider {
+    overflow: hidden;
+    width: 100%;
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
 
-/* Loading背景画面設定　*/
+  .logo-track {
+    display: flex;
+    animation: marquee 30s linear infinite;
+    will-change: transform;
+  }
 
-#splash {
-  /*fixedで全面に固定*/
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  background:#333;
-  text-align:center;
-  color:#fff;
+  .logo-group {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px; /* ロゴ間の余白 */
+    list-style: none;
+    margin: 0;
+    padding: 0 20px; /* 両端にも余白を入れるのがポイント */
+  }
+
+  .logo-group li {
+    flex: 0 0 auto;
+  }
+
+  .logo-group img {
+    display: block;
+    height: auto;
+  }
+
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* ★2グループ分のうち、ちょうど1グループ分だけ動かす */
 }
 
-/* Loadingバー中央配置　*/
-#splash_text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 999;
-  width: 100%;
-  transform: translate(-50%, -50%);
-  color: #fff;
+/* SP調整例 */
+@media (max-width: 767px) {
+  :root { --logo-gap: 24px; --logo-h: 28px; --duration: 24s; }
+}
+
+
+.p-section-service {
+  &__block {
+    background: $color04;
+  }
 }
