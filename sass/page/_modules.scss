@@ -71,7 +71,7 @@ body {
 
   // PC時のメニュー
   &__list {
-    font-size: rem(14);
+    font-size:  clamp(12px, rem(14), 14px);
     color: $white;
     font-weight: $bold;
     line-height: 1;
@@ -147,30 +147,12 @@ body {
 }
 
 
-// ページトップボタン
-.pagetop {
-  height: rem(50);
-  width: rem(50);
-  position: fixed;
-  right: rem(30);
-  bottom: rem(30);
-  background:$white;
-  border: solid 2px $color01;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  &__arrow {
-    height: rem(10);
-    width: rem(10);
-    border-top: 3px solid $color01;
-    border-right: 3px solid $color01;
-    transform: translateY(20%) rotate(-45deg);
-  }
-}
-
+/**
+footer
+----------------------------------------------**/
 .l-footer {
+  background: $black-01;
+  border-top: 1px solid $color02;
   .l-footer__inner {
     //padding: 0 rem(80);
   }
@@ -178,7 +160,7 @@ body {
     display: flex;
     align-items: center;
     place-content: space-between;
-    padding: 0 rem(80);
+    padding: rem(40) rem(80) 0;
     .l-footer__logo {
       width: rem(167);
       img {
@@ -253,6 +235,16 @@ body {
 
 // 共通セクション
 .inner {
+  width: calc(rem(1145) + rem(160));
+  max-width: 100%;
+  padding-left: rem(80);
+  padding-right: rem(80);
+  margin: 0 auto;
+  @include sm {
+    padding: 0 rem(20);
+  }
+}
+.l-inner {
   width: rem(1440);
   max-width: 100%;
   padding-left: rem(80);
@@ -266,14 +258,53 @@ body {
 // 共通パーツ（タイトル・テキスト）
 .c-ttl-01 {
   text-align: center;
-  font-size: rem(26);
+  font-size:  clamp(30px, rem(55), 55px);
   margin-bottom: rem(24);
+  display: flex;
+  align-items: center;
+  gap: rem(15);
+  color: $color01;
+  span:not(.en2) {
+    height: 1px;
+    background: rgba($color01,0.5);
+    width: rem(50);
+  }
+  .en2 {
+    font-size:  clamp(10px, rem(14), 14px);
+    left: rem(8);
+    position: relative;
+  }
+  &.c-color-white {
+    color: $white;
+    span:not(.en2) {
+      background: rgba($white,0.5);
+    }
+  }
 }
+
+.c-btn-01 {
+  border: 1px solid $black-01;
+  border-radius: rem(15);
+  font-size:  clamp(14px, rem(16), 16px);
+  color: $black-01;
+  font-weight: $bold;
+  display: inline-flex;
+  align-items: center;
+  padding: rem(14) rem(40);
+
+  img {
+    width: rem(14);
+    height: rem(14);
+  }
+}
+
 
 .section-txt {
   text-align: center;
   font-size: rem(13);
 }
+
+
 
 
 // 共通アニメーション
@@ -332,5 +363,229 @@ body {
   img {
     width: rem(22);
     height: rem(22);
+  }
+}
+
+
+
+/**
+スライダー slider
+----------------------------------------------**/
+// スライダー（swiper使用）
+.section-slider {
+  margin-left: rem(24);
+  .swiper {
+    margin-top: rem(40);
+  }
+  .slides-wrapper {
+    padding-bottom: rem(50);
+  }
+  .swiper-pagination-bullet {
+    width: rem(35);
+    height: rem(4);
+    border-radius: 9999px;
+    background: $white;
+    opacity: 1;
+    &.swiper-pagination-bullet-active {
+      background: $color01;
+    }
+  }
+  .swiper-button-next {
+    width: rem(39);
+    height: rem(39);
+    border-radius: 100%;
+    background: linear-gradient(60deg, #7BC4F1, #E9C7C6);
+    margin-top: rem(-30);
+    svg {
+      width: rem(10);
+      height: rem(13);
+    }
+  }
+}
+// サムネイルスライダー
+.swiper {
+  display: flex;
+}
+.swiper-container {
+  width: 100%;
+  //スライダー
+  &.slider {
+    // height: 80vh;
+    overflow: hidden;
+    position: relative;
+  }
+  //サムネイル
+  &.swiper-wrapper-thumbnail {
+    display: flex;
+    flex-direction: column;
+  }
+  &.slider-thumbnail {
+    height: 20vh;
+    .swiper-wrapper {
+      width: 25%;
+      height: 38%;
+      display: flex;
+      flex-direction: column;
+
+      .swiper-slide {
+        width: 25%;
+        height: 100%;
+        opacity: .5;
+        overflow: hidden;
+
+        &.swiper-slide-thumb-active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+  left: rem(20);
+  right: auto;
+}
+
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+  content: 'prev';
+  width: 20px;
+  height: 20px;
+  border-top: 1px solid #333;
+  border-left: 1px solid #333;
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+  content: 'next';
+  width: 20px;
+  height: 20px;
+  border-top: 1px solid #333;
+  border-right: 1px solid #333;
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+
+
+/**
+導入事例カード
+----------------------------------------------**/
+.card {
+  display: grid;
+  gap: rem(12);
+}
+.card-image {
+  aspect-ratio: 310 / 425;
+  position: relative;
+  border-radius: rem(10);
+  img {
+    aspect-ratio: 310 / 425;
+    width: 100%;
+    object-fit: cover;
+    border-radius: rem(10);
+  }
+  &__tag {
+    background: $black-01;
+    color: $white;
+    font-size:  clamp(14px, rem(16), 16px);
+    position: absolute;
+    bottom: rem(20);
+    right: rem(20);
+    padding: rem(10) rem(15);
+    border-radius: rem(5);
+  }
+}
+.card-title {
+  font-size:  clamp(14px, rem(16), 16px);
+  font-weight: $bold;
+}
+.card-content {
+  font-size:  clamp(12px, rem(14), 14px);
+}
+.card-tag {
+  font-size:  clamp(12px, rem(14), 14px);
+  display: flex;
+  gap: rem(12);
+  span {
+    background: $color04;
+    padding: rem(3) rem(14);
+    border-radius: rem(20);
+  }
+}
+
+
+/**
+フッダー/ダウンロード・CONTACTリンク
+----------------------------------------------**/
+.l-link__bottom {
+  background: $black-01;
+  &__inner {
+    display: grid;
+    grid-template-columns: calc(50% - rem(24)) calc(50% - rem(24));
+    gap: rem(48);
+  }
+  a {
+    display: grid;
+    align-items: center;
+    aspect-ratio: 560 / 380;
+    color: $white;
+    text-align: center;
+    &:nth-child(1) {
+      background-image: url(../images/common/link-bg01.png);
+      background-size: 100%;
+      width: 100%;
+      height: 100%;
+    }
+    &:nth-child(2) {
+      background-image: url(../images/common/link-bg02.png);
+      background-size: 100%;
+      width: 100%;
+      height: 100%;
+    }
+    h4 {
+      display: block;
+      font-size:  clamp(25px, rem(40), 40px);
+      margin-bottom: rem(18);
+      small {
+        display: block;
+        font-size:  clamp(16px, rem(20), 20px);
+        font-weight: $normal;
+        margin-top: rem(10);
+      }
+    }
+    p {
+      font-size:  clamp(14px, rem(16), 16px);
+    }
+  }
+}
+
+/**
+forestバナー
+----------------------------------------------**/
+.l-banner {
+  padding: rem(125) 0;
+  background: $black-01;
+  &__block {
+    background: $color04;
+    padding: rem(70) rem(60) rem(80);
+    position: relative;
+    //aspect-ratio: 1145 / 338;
+    overflow: hidden;
+    border-radius: rem(15);
+    display: grid;
+    align-items: center;
+    &__content {
+      width: rem(420);
+      max-width: 45%;
+      font-size:  clamp(14px, rem(16), 16px);
+    }
+    img:not(.l-banner__bg) {
+      width: rem(102);
+      margin-bottom: rem(35);
+    }
+    .l-banner__bg {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: rem(612);
+      height: 100%;
+      max-width: 54%;
+    }
   }
 }

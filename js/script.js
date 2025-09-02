@@ -38,11 +38,11 @@ jQuery(function ($) {
   const swiper = new Swiper(".swiper", {
     loop: true,
     speed: 1800,
-    //slidesPerView: "1.3",
+    slidesPerView: "3.7",
     spaceBetween: 20,
     breakpoints: {
       767: {
-        slidesPerView: "1.3",
+        slidesPerView: "3.7",
       },
     },
     pagination: {
@@ -102,27 +102,4 @@ $(".section-accordion__ttl").click(function () {
     .slideUp();
   $(this).toggleClass("active");
   $(".section-accordion__ttl").not($(this)).removeClass("active");
-});
-
-//サムネイルスライダー
-var sliderThumbnail = new Swiper(".slider-thumbnail", {
-  slidesPerView: 3,
-  freeMode: true,
-  watchSlidesVisibility: true,
-  watchSlidesProgress: true,
-});
-
-var slider = new Swiper(".slider", {
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  thumbs: {
-    swiper: sliderThumbnail,
-  },
 });

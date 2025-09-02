@@ -101,6 +101,11 @@ $mediaquerys: (
     @content;
   }
 }
+@mixin xl($mediaquery: xl) {
+  @media #{map-get($mediaquerys, $mediaquery)} {
+    @content;
+  }
+}
 
 
 // remへの計算式（16pxを基準としている。10pxを基準とする場合は16を10に変更する）
@@ -138,4 +143,7 @@ h1,h2,h3,h4 {
 
 .en {
   font-family: $English-font-family-01;
+}
+.en2 {
+  font-family: $English-font-family-02;
 }
