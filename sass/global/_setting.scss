@@ -12,13 +12,20 @@ $padding-sp: 15px;
 ////////////////////
 // フォント設定
 ////////////////////
+// フォントウェイト
+$regular: 300;
+$normal: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
 //日本語
 /* medium */
 @font-face {
- font-family: 'Yu Gothic';
- font-weight: 500;
- src: url(../fonts/YuGothM.ttc) format('truetype');
- font-style: normal;
+  font-family: 'Yu Gothic';
+  src: url('../fonts/YuGothic-Medium.woff2') format('woff2'),
+       url('../fonts/YuGothic-Medium.woff') format('woff');
+  font-weight: $medium;
+  font-style: normal;
 }
 // 英語
 @font-face {
@@ -30,18 +37,13 @@ $padding-sp: 15px;
 
 @import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
 
-$base-font-family: "Yu Gothic", "游ゴシック体",  "メイリオ", sans-serif;
+$base-font-family: "Yu Gothic", "sans-serif";
 $English-font-family-01: "felix-titling", "sans-serif";
 $English-font-family-02: "Figtree", "sans-serif";
 
 // ※検証ツールでしっかり反映されているか確認する
 
-// フォントウェイト
-$regular: 300;
-$normal: 400;
-$medium: 500;
-$semibold: 600;
-$bold: 700;
+
 
 ////////////////////
 // 色の指定
@@ -55,6 +57,7 @@ $color01: #02112D; //navy
 $color02: #252D3B; // grey
 $color03: #0E337A; //blue
 $color04: #F4F6F8; //light grey
+$color05: #D9DBDF; //border grey
 
 ////////////////////
 // メディアクエリとブレークポイントの設定
@@ -135,12 +138,16 @@ html body .pc{
 body {
   color: $black-01;
   font-family: $base-font-family;
+  font-weight: $medium;
   //font-family: 'Noto Sans JP', sans-serif;
 }
 h1,h2,h3,h4 {
   font-weight: 500;
 }
 
+.ja {
+  font-family: $base-font-family;  
+}
 .en {
   font-family: $English-font-family-01;
 }

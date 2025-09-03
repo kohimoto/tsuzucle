@@ -18,7 +18,7 @@ body {
     width: 100%;
     height: 100%;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
+    //background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     border-radius: 10px;
@@ -46,7 +46,11 @@ body {
     }
   }
   &__logo {
-    width: rem(134)
+    width: rem(134);
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0.7;
+    }
   }
   &.is-open {
     .l-header__logo {
@@ -93,6 +97,7 @@ body {
         display: inline-block;
         text-align: center;
         padding-bottom: 0;
+        transition: all 0.3s;
         &:hover {
           opacity: 0.6;
           &::before {
@@ -110,6 +115,27 @@ body {
     }
   }
 }
+//midnight js用
+.l-header__inner {
+  height: rem(60) !important;
+  top: rem(20) !important;
+}
+.midnightInner {
+  display: flex;
+  align-items: center;
+  padding: 0 rem(30)
+}
+.midnightHeader.default {
+  .midnightInner {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+.midnightHeader.black {
+  .midnightInner {
+    background: rgba($black-01, 0.2);
+  }
+}
+
 
 
 .l-offcanvas {
@@ -153,6 +179,7 @@ footer
 .l-footer {
   background: $black-01;
   border-top: 1px solid $color02;
+  position: relative;
   .l-footer__inner {
     //padding: 0 rem(80);
   }
@@ -163,6 +190,10 @@ footer
     padding: rem(40) rem(80) 0;
     .l-footer__logo {
       width: rem(167);
+      transition: all 0.3s;
+      &:hover {
+        opacity: 0.7;
+      }
       img {
         width: rem(167);
       }
@@ -174,13 +205,19 @@ footer
       display: flex;
       place-content: end;
       gap: vwPC(85);
+      @include lg {
+        gap: vwPC(50);
+      }
       li {
       }
       a {
         color: $white;
         font-size: clamp(12px, rem(16), 16px);
         white-space: nowrap;
-
+        transition: all 0.3s;
+        &:hover {
+          opacity: 0.6;
+        }
       }
     }
   }
@@ -198,6 +235,10 @@ footer
         display: flex;
         align-items: center;
         gap: vwPC(6);
+        transition: all 0.3s;
+        &:hover {
+          opacity: 0.6;
+        }
         .icon-window {
           width: 11.701px;
           height: 11.827px;
@@ -232,6 +273,23 @@ footer
   }
 }
 
+/**
+ページトップ l-pagetop
+----------------------------------------------**/
+.l-pagetop {
+  display: block;
+  width: rem(62);
+  height: rem(62);
+  position: absolute;
+  right: rem(40);
+  top: rem(-40);
+  transition: all 0.3s;
+  filter: brightness(1);
+  &:hover {
+    //opacity: 0.7;
+    filter: brightness(1.5);
+  }
+}
 
 // 共通セクション
 .inner {
@@ -240,6 +298,9 @@ footer
   padding-left: rem(80);
   padding-right: rem(80);
   margin: 0 auto;
+  @include xl {
+    width: 100%;
+  }
   @include sm {
     padding: 0 rem(20);
   }
@@ -259,7 +320,7 @@ footer
 .c-ttl-01 {
   text-align: center;
   font-size:  clamp(30px, rem(55), 55px);
-  margin-bottom: rem(24);
+  margin-bottom: rem(60);
   display: flex;
   align-items: center;
   gap: rem(15);
@@ -287,17 +348,37 @@ footer
   border-radius: rem(15);
   font-size:  clamp(14px, rem(16), 16px);
   color: $black-01;
-  font-weight: $bold;
+  font-weight: $medium;
   display: inline-flex;
   align-items: center;
   padding: rem(14) rem(40);
-
+  transition: all 0.3s;
+  filter: brightness(1);
+  &:hover {
+    opacity: 0.7;
+    filter: brightness(2);
+    img {
+      left: rem(4);
+    }
+  }
   img {
     width: rem(14);
     height: rem(14);
+    margin-left: rem(10);
+    position: relative;
+    left: rem(0);
+    transition: all 0.3s;
   }
 }
-
+.c-ttl__wrap {
+  display: flex;
+  place-content: space-between;
+  align-items: center;
+  padding-bottom: rem(60);
+  .c-ttl-01 {
+    margin-bottom: 0;
+  }
+}
 
 .section-txt {
   text-align: center;
@@ -344,9 +425,11 @@ footer
 
 
 .l-contact__parts {
-  position: fixed;
+  //position: fixed;
+  z-index: 3;
+  position: absolute;
   right: 0;
-  bottom: 0;
+  top: rem(-64.5);
   font-size:  clamp(14px, vwPC(16), 16px);
   font-weight: $bold;
   background: $color03;
@@ -360,6 +443,11 @@ footer
   height: rem(129);
   border-radius: rem(23);
   line-height: 2;
+  transition: all 0.3s;
+  filter: brightness(1);
+  &:hover {
+    filter: brightness(1.3);
+  }
   img {
     width: rem(22);
     height: rem(22);
@@ -391,14 +479,14 @@ footer
     }
   }
   .swiper-button-next {
-    width: rem(39);
-    height: rem(39);
+    width: rem(58);
+    height: rem(58);
     border-radius: 100%;
-    background: linear-gradient(60deg, #7BC4F1, #E9C7C6);
     margin-top: rem(-30);
-    svg {
-      width: rem(10);
-      height: rem(13);
+    background-image: url(../images/common/arrow-circle.svg);
+    right: vwPC(60);
+    &::after {
+      content: none;
     }
   }
 }
@@ -469,21 +557,35 @@ footer
 .card {
   display: grid;
   gap: rem(12);
+  &:hover {
+    img {
+      filter: brightness(1.1);
+      width: 105%;
+      max-width: 105%;
+    }
+  }
 }
 .card-image {
   aspect-ratio: 310 / 425;
   position: relative;
   border-radius: rem(10);
+  overflow: hidden;
   img {
     aspect-ratio: 310 / 425;
     width: 100%;
     object-fit: cover;
     border-radius: rem(10);
+    filter: brightness(1);
+    transition: all 0.75s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
   }
   &__tag {
     background: $black-01;
     color: $white;
-    font-size:  clamp(14px, rem(16), 16px);
+    font-size:  clamp(12px, rem(16), 16px);
     position: absolute;
     bottom: rem(20);
     right: rem(20);
@@ -492,11 +594,12 @@ footer
   }
 }
 .card-title {
-  font-size:  clamp(14px, rem(16), 16px);
+  font-size:  clamp(15px, rem(16), 16px);
   font-weight: $bold;
 }
 .card-content {
-  font-size:  clamp(12px, rem(14), 14px);
+  font-size:  clamp(13px, rem(14), 14px);
+  line-height: 1.75;
 }
 .card-tag {
   font-size:  clamp(12px, rem(14), 14px);
@@ -526,6 +629,11 @@ footer
     aspect-ratio: 560 / 380;
     color: $white;
     text-align: center;
+    transition: all 0.7s;
+    background-position: center;
+    border-radius: rem(15);
+    overflow: hidden;
+    filter: brightness(1);
     &:nth-child(1) {
       background-image: url(../images/common/link-bg01.png);
       background-size: 100%;
@@ -537,6 +645,10 @@ footer
       background-size: 100%;
       width: 100%;
       height: 100%;
+    }
+    &:hover {
+      background-size: 105%;
+      filter: brightness(1.3);
     }
     h4 {
       display: block;
@@ -574,6 +686,7 @@ forestバナー
       width: rem(420);
       max-width: 45%;
       font-size:  clamp(14px, rem(16), 16px);
+      line-height: 1.75;
     }
     img:not(.l-banner__bg) {
       width: rem(102);
@@ -586,6 +699,59 @@ forestバナー
       width: rem(612);
       height: 100%;
       max-width: 54%;
+    }
+  }
+}
+
+/**
+ニュース l-news
+----------------------------------------------**/
+.l-news__list {
+  background: $white;
+  margin-left: calc((100% - rem(1145)) / 2);
+  padding: rem(100) rem(65);
+  border-radius: rem(20) 0 0 rem(20);
+  @include xl {
+    margin-left: rem(80);
+  }
+  a {
+    padding: rem(30) rem(0);
+    display: block;
+    border-bottom: 1px solid $color05;
+    max-width: rem(970);
+    color: $color01;
+    font-size:  clamp(14px, rem(16), 16px);
+    position: relative;
+    transition: all 0.3s;
+    &:first-of-type {
+      border-top: 1px solid $color05;
+    }
+    &:hover {
+      opacity: 0.7;
+      &::after {
+        right: rem(20);
+      }
+    }
+    dl {
+      display: flex;
+      padding: 0 rem(60) 0 rem(24);
+      gap: rem(24);
+      dt {
+        font-weight: $medium;
+      }
+    }
+    &::after {
+      content: "";
+      background: url(../images/common/arrow.svg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: rem(14);
+      height: rem(14);
+      position: absolute;
+      right: rem(24);
+      top: 50%;
+      transform: translate(-0%, -50%);
+      transition: all 0.3s;
     }
   }
 }

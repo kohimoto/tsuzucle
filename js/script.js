@@ -3,9 +3,8 @@ gsap.registerPlugin(ScrollToPlugin);
 jQuery(function ($) {
 
   // この中であればWordpressでも「$」が使用可能になる
-  var topBtn = $(".pagetop");
+  var topBtn = $(".l-pagetop");
   topBtn.hide();
-
   // ボタンの表示設定
   $(window).scroll(function () {
     if ($(this).scrollTop() > 70) {
@@ -23,7 +22,7 @@ jQuery(function ($) {
       {
         scrollTop: 0,
       },
-      300,
+      1000,
       "swing"
     );
     return false;
@@ -34,6 +33,9 @@ jQuery(function ($) {
     $(".l-header").toggleClass("is-open");
     $(".l-offcanvas").toggleClass("is-open");
   });
+
+  //ヘッダーカラー
+  $('.l-header__inner').midnight();
 
   const swiper = new Swiper(".swiper", {
     loop: true,

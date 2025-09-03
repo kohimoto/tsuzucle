@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no" />
   <!-- meta情報 -->
-  <title>proqualite</title>
+  <title>Tsuzucle</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <!-- ogp -->
@@ -38,7 +38,7 @@
   <header class="l-header">
     <div class="l-header__inner">
       <div class="l-header__logo">
-        <img src="./images/common/logo.svg" alt="">
+        <a href="#"><img src="./images/common/logo.svg" alt=""></a>
       </div>
       <ul class="l-header__list pc">
         <li class="l-header__list__havchild"><a href="#">トップ</a></li>
@@ -81,10 +81,6 @@
       </div>
     </div>
   </nav>
-  <a href="#" class="l-contact__parts">
-    <img src="./images/common/chat-white.svg" alt="">
-    <span>お問い合せは<br>こちら</span>
-  </a>
   <div class="p-section p-section__top">
     <section class="p-section-keyvisual">
       <div class="p-section-keyvisual__images">
@@ -131,13 +127,17 @@
           伴走型コンサルティング。<br>
           <span>シ</span>ステム開発も、デジタルマーケティングも。
         </p>
-        <a href="" class="p-section-keyvisual__content__btn">
+        <a href="#" class="p-section-keyvisual__content__btn">
           <img src="./images/common/chat.svg" alt="">
           <span>相談してみる</span>
         </a>
       </div><!-- / .p-section-keyvisual__content-->
     </section><!-- /.p-section-keyvisual -->
-    <section class="p-section-achievement">
+    <section class="p-section-achievement" data-midnight="black">
+      <a href="#" class="l-contact__parts">
+        <img src="./images/common/chat-white.svg" alt="">
+        <span>お問い合せは<br>こちら</span>
+      </a>
       <ul class="inner p-section-achievement__text">
         <li>
           導入社数<span class="en">50</span><small>社</small>
@@ -208,7 +208,69 @@
       </div><!-- /.p-section-service__block -->
     </div><!-- /.inner -->
   </section><!-- /.p-section-service -->
-  <section class="p-section__casestudy">
+  <section class="p-section__solution">
+    <div class="inner">
+      <h2 class="c-ttl-01 c-color-white">
+        ソリューション
+        <span></span>
+        <span class="en2">Solution</span>
+      </h2><!-- /.c-ttl-01 -->
+      <div class="p-section__solution__list">
+        <div class="p-section__solution__list__card">
+          <div class="p-section__solution__list__content">
+            <h3>マーケティングBPO</h3>
+            <p>トップダウンの意思を現場目線まで落とし込み、運用まで対応するBPO支援サービス</p>
+            <div class="p-section__solution__list__content-tag">
+              <p><small>■</small>提供機能</p>
+              <div>
+                <span class="pad">SNS運用<br>支援</span>
+                <span class="pad">広告運用<br>支援</span>
+                <span>ソーシャル<br>レポート作成</span>
+                <span class="pad">SEO支援</span>
+                <span class="pad">GA4設計</span>
+                <span class="etc">…</span>
+              </div>
+            </div>
+          </div>
+        </div><!-- //p-section__solution__list__card -->
+        <div class="p-section__solution__list__card">
+          <div class="p-section__solution__list__content">
+            <h3>事業改善コンサルティング</h3>
+            <p>組織・事業全体の意思決定および実行まで担う、伴走型の経営改善・PM支援サービス</p>
+            <div class="p-section__solution__list__content-tag">
+              <p><small>■</small>提供機能</p>
+              <div>
+                <span>ECグロース<br>支援</span>
+                <span>マーケティング<br>戦略</span>
+                <span>PM・実行<br>併走</span>
+                <span>ECグロース<br>支援</span>
+                <span>ステーク<br>ホルダー管理</span>
+                <span class="etc">…</span>
+              </div>
+            </div>
+          </div>
+        </div><!-- //p-section__solution__list__card -->
+        <div class="p-section__solution__list__card">
+          <div class="p-section__solution__list__content">
+            <h3>リテール領域のDX支援・開発</h3>
+            <p>蓄積された資産を、将来の成長につなげる、これからの時代のシステム開発。</p>
+            <div class="p-section__solution__list__content-tag">
+              <p><small>■</small>提供機能</p>
+              <div>
+                <span>B2B<br>EC構築</span>
+                <span>ダッシュボード<br>構築</span>
+                <span>カスタムアプリ<br>開発</span>
+                <span>EC<br>リプレース</span>
+                <span>越境<br>EC</span>
+                <span class="etc">…</span>
+              </div>
+            </div>
+          </div>
+        </div><!-- //p-section__solution__list__card -->
+      </div><!-- //p-section__solution__list -->
+    </div><!-- /.inner -->
+  </section><!-- /.p-section__solution -->
+  <section class="p-section__casestudy" data-midnight="black">
     <div class="inner">
       <h2 class="c-ttl-01 ">
         導入事例
@@ -219,7 +281,7 @@
     <div class="section-slider">
       <div class="swiper">
         <div class="slides-wrapper swiper-wrapper">
-          <div class="slide swiper-slide card">
+          <a class="slide swiper-slide card" href="#">
             <div class="card-image">
               <img src="./images/top/case01.png" alt="">
               <span class="card-image__tag">売上 +128%</span>
@@ -232,8 +294,8 @@
               <span>業種タグ</span>
               <span>サービスタグ</span>
             </div>
-          </div>
-          <div class="slide swiper-slide card">
+          </a>
+          <a class="slide swiper-slide card" href="#">
             <div class="card-image">
               <img src="./images/top/case02.png" alt="">
               <span class="card-image__tag">売上 +128%</span>
@@ -246,8 +308,8 @@
               <span>業種タグ</span>
               <span>サービスタグ</span>
             </div>
-          </div>
-          <div class="slide swiper-slide card">
+          </a>
+          <a class="slide swiper-slide card" href="#">
             <div class="card-image">
               <img src="./images/top/case03.png" alt="">
               <span class="card-image__tag">売上 +128%</span>
@@ -260,8 +322,8 @@
               <span>業種タグ</span>
               <span>サービスタグ</span>
             </div>
-          </div>
-          <div class="slide swiper-slide card">
+          </a>
+          <a class="slide swiper-slide card" href="#">
             <div class="card-image">
               <img src="./images/top/case04.png" alt="">
               <span class="card-image__tag">売上 +128%</span>
@@ -274,8 +336,8 @@
               <span>業種タグ</span>
               <span>サービスタグ</span>
             </div>
-          </div>
-          <div class="slide swiper-slide card">
+          </a>
+          <a class="slide swiper-slide card" href="#">
             <div class="card-image">
               <img src="./images/top/case02.png" alt="">
               <span class="card-image__tag">売上 +128%</span>
@@ -288,13 +350,9 @@
               <span>業種タグ</span>
               <span>サービスタグ</span>
             </div>
-          </div>
+          </a>
         </div>
-        <!--div class="swiper-button-next">
-          <svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1L9 6.32258L1 12" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div--><!-- /.section__menu__arrows__left -->
+        <div class="swiper-button-next"></div><!-- /.section__menu__arrows__left -->
         <!--div class="swiper-pagination"></div-->
       </div><!-- //swiper -->
     </div>
@@ -312,17 +370,53 @@
       </div>
     </div>
   </section>
+  <section class="p-news l-news" data-midnight="black">
+    <div class="inner">
+      <div class="c-ttl__wrap">
+        <h2 class="c-ttl-01">
+          ニュース
+          <span></span>
+          <span class="en2">News</span>
+        </h2><!-- /.c-ttl-01 -->
+        <a href="" class="c-btn-01">
+          ニュース一覧へ
+          <img src="./images/common/arrow.svg" alt="">
+        </a><!-- /.c-btn-01 -->
+      </div><!-- //c-ttl__wrap-->
+    </div>
+    <div class="l-news__list">
+      <a href="#">
+        <dl>
+          <dt class="en2">2025.12.13</dt>
+          <dd>株式会社Tsuzucle、ShopifyパートナープログラムにおいてSelect Partnerに認定</dd>
+        </dl>
+      </a>
+      <a href="#">
+        <dl>
+          <dt class="en2">2025.12.13</dt>
+          <dd>株式会社Tsuzucle、ShopifyパートナープログラムにおいてSelect Partnerに認定</dd>
+        </dl>
+      </a>
+      <a href="#">
+        <dl>
+          <dt class="en2">2025.12.13</dt>
+          <dd> 【ECYC #11開催レポート】Anker猿渡氏・forest湯原氏・Tsuzucle森氏の3社CEOによるEC×キャリアセミナー ああああ</dd>
+        </dl>
+      </a>
+
+    </div>
+  </section>
   <section class="l-link__bottom">
     <div class="l-link__bottom__inner inner">
       <a href="#">
         <div class="">
-          <h4 class="en">CONTACT<small>お問い合せ</small></h4>
+          <h4 class="en">CONTACT<small class="ja">お問い合せ</small></h4>
           <p>ご質問・ご要望などお気軽にご相談ください。</p>
         </div>
       </a>
       <a href="#">
         <div class="">
-          <h4 class="en">DOWNLOAD<small>資料資料ダウンロード</small></h4>
+          <h4 class="en">DOWNLOAD<small class="ja">資料資料ダウンロード</small></h4>
           <p>無料で会社案内や事例詳細をDL出来ます。</p>
         </div>
       </a>
@@ -330,6 +424,9 @@
   </section>
 </div>
 <footer class="l-footer">
+  <a href="#" class="l-pagetop">
+    <img src="./images/common/pagetop.svg" alt="↑">
+  </a>
   <div class="l-footer__inner">
     <div class="l-footer__menu">
       <div class="l-footer__logo">
@@ -337,12 +434,12 @@
       </div>
       <div class="l-footer__menu__list">
         <ul>
-          <li><a>トップ</a></li>
-          <li><a>サービス</a></li>
-          <li><a>導入事例</a></li>
-          <li><a>ニュース</a></li>
-          <li><a>資料</a></li>
-          <li><a>お問い合わせ</a></li>
+          <li><a href="#">トップ</a></li>
+          <li><a href="#">サービス</a></li>
+          <li><a href="#">導入事例</a></li>
+          <li><a href="#">ニュース</a></li>
+          <li><a href="#">資料</a></li>
+          <li><a href="#">お問い合わせ</a></li>
         </ul>
       </div>
     </div><!-- //l-footer__menu -->
@@ -366,6 +463,8 @@
     </div>
   </div><!-- //l-footer__inner -->
 </footer>
+<!-- Midnignt JS -->
+<script src="./js/midnight.jquery.min.js"></script>
 </body>
 
 </html>
