@@ -1,7 +1,8 @@
 @use "global" as *;
-body {
-  // padding-top: rem(50); //ヘッダーの高さ分
-}
+
+/**
+ヘッダー header
+----------------------------------------------**/
 .l-header {
   width: calc(100% - rem(160));
   height: rem(100);
@@ -75,7 +76,7 @@ body {
 
   // PC時のメニュー
   &__list {
-    font-size:  clamp(12px, rem(14), 14px);
+    font-size:  clamp(13px, rem(14), 14px);
     color: $white;
     font-weight: $bold;
     line-height: 1;
@@ -137,7 +138,9 @@ body {
 }
 
 
-
+/**
+オフカンバスメニュー
+----------------------------------------------**/
 .l-offcanvas {
   background: linear-gradient(48deg, rgba(95, 175, 225, 0.90) -5.62%, rgba(123, 196, 241, 0.90) 100%);
   position: fixed;
@@ -204,7 +207,7 @@ footer
     ul {
       display: flex;
       place-content: end;
-      gap: vwPC(85);
+      gap: clamp(vwPC(85), vwPC(85), 85px);;
       @include lg {
         gap: vwPC(50);
       }
@@ -212,7 +215,7 @@ footer
       }
       a {
         color: $white;
-        font-size: clamp(12px, rem(16), 16px);
+        font-size: clamp(13px, rem(16), 16px);
         white-space: nowrap;
         transition: all 0.3s;
         &:hover {
@@ -388,7 +391,9 @@ footer
 
 
 
-// 共通アニメーション
+/**
+共通アニメーション
+----------------------------------------------**/
 .js__fadein { //スクロールしたらふわふわ出てくる
   opacity: 0;
   position: relative;
@@ -423,7 +428,9 @@ footer
   }
 }
 
-
+/**
+お問い合わせはこちら
+----------------------------------------------**/
 .l-contact__parts {
   //position: fixed;
   z-index: 3;
@@ -453,7 +460,6 @@ footer
     height: rem(22);
   }
 }
-
 
 
 /**
@@ -648,7 +654,7 @@ footer
     }
     &:hover {
       background-size: 105%;
-      filter: brightness(1.3);
+      filter: brightness(1.4);
     }
     h4 {
       display: block;
@@ -752,6 +758,78 @@ forestバナー
       top: 50%;
       transform: translate(-0%, -50%);
       transition: all 0.3s;
+    }
+  }
+}
+
+
+
+/**
+アコーディオン
+----------------------------------------------**/
+.section-accordion {
+  margin-top: rem(40);
+  @include mq {
+    margin-top: rem(50);
+  }
+  &__ttl {
+    background-color: $color02;
+    padding: rem(15) rem(40) rem(15) rem(15);
+    position: relative;
+    cursor: pointer;
+    font-weight: bold;
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: rem(10);
+      height: rem(2);
+      background-color: $white;
+      right: rem(15);
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: rem(10);
+      height: rem(2);
+      background-color: $white;
+      right: rem(15);
+      top: 50%;
+      transform: translate(0, -50%) rotate(90deg);
+      transition: all .3s;
+    }
+    &.active {
+      &::after {
+        transform: translateY(-50%) rotate(0);
+      }
+    }
+    &.question {
+      span {
+        &::before {
+          content:'Q.';
+          color: $color04;
+          font-size: rem(20);
+          font-weight: bold;
+          margin-right: .5em;
+        }
+      }
+    }
+  }
+  &__content {
+    background-color: $white;
+    display: none;
+    padding: 15px;
+    &.answer {
+      &::before {
+        content:'A.';
+        color: $color04;
+        font-size: rem(20);
+        font-weight: bold;
+        margin-right: .5em;
+      }
     }
   }
 }

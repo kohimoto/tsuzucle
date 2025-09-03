@@ -5,12 +5,10 @@ body {
   background-repeat: repeat-y;
   background-position: center;
 }
-.p-section {
-  //max-width: 750px;
-}
-.p-bg {
 
-}
+/**
+キービジュアル　p-section-keyvisual
+----------------------------------------------**/
 .p-section-keyvisual {
   position: relative;
   overflow: hidden;
@@ -88,145 +86,60 @@ body {
     &.color-white{
       color: #fff;
     }
-
-    /* 黒：画像外（右側）だけを表示 */
   }
-
   .p-section-keyvisual__images {
   width: vwPC(967);
   display: flex;
   position: relative;
   z-index: 1;
+  }
 
+  /**
+  キービジュアル内スライドの設定
+  ----------------------------------------------**/
+  $gap: 30px;   // 画像間の隙間
+  $dur: 25s;    // アニメーション速度
   .slide {
     display: flex;
-    gap: rem(25);
+    gap: 25px;       // 上下の列間の余白
     width: 100%;
-
-    .slide-wrap {
-      width: 50%;
-
-      &.bottom {
-        justify-content: flex-end;
-
-        ul {
-          animation: slide-flow-bottom 25s linear infinite;
-        }
-      }
-
-      &.top {
-        ul {
-          animation: slide-flow 25s linear infinite;
-        }
-      }
-
-      ul {
-        display: flex; // gridではなくflexに変更
-        flex-direction: column-reverse;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        gap: rem(30);
-        will-change: transform;
-        backface-visibility: hidden;
-        transform: translateZ(0);
-      }
-    }
   }
+  .slide-col {
+    width: 50%;
+    overflow: hidden; // コンテナ外は非表示に
+  }
+  .track {
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translate3d(0,0,0);
+    animation: marqueeY $dur linear infinite;
+  }
+  .slide-col[data-dir="reverse"] .track {
+    animation-direction: reverse; // 下段は逆方向に
+  }
+  .list {
+    display: grid;
+    row-gap: $gap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .list li { margin: 0; }
+  .list img {
+    display: block;
+    height: auto;
+  }
+} //.p-section-keyvisual
+
+@keyframes marqueeY {
+  0%   { transform: translate3d(0, 0%, 0); }
+  100% { transform: translate3d(0, -50%, 0); } // 半分だけ移動
 }
+@media (prefers-reduced-motion: reduce) {
+  .track { animation: none; }
 }
-@keyframes slide-flow {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(calc(-100% - rem(30)));
-  }
-}
-@keyframes slide-flow-bottom {
-  0% {
-    transform: translateY(calc(-100% - rem(30)));
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-
-
-
-.p-section__faq {
-  padding: rem(60) 0 rem(100);
-}
-
-// アコーディオン
-.section-accordion {
-  margin-top: rem(40);
-  @include mq {
-    margin-top: rem(50);
-  }
-  &__ttl {
-    background-color: $color02;
-    padding: rem(15) rem(40) rem(15) rem(15);
-    position: relative;
-    cursor: pointer;
-    font-weight: bold;
-    &::before {
-      position: absolute;
-      content: "";
-      display: block;
-      width: rem(10);
-      height: rem(2);
-      background-color: $white;
-      right: rem(15);
-      top: 50%;
-      transform: translate(0, -50%);
-    }
-    &::after {
-      position: absolute;
-      content: "";
-      display: block;
-      width: rem(10);
-      height: rem(2);
-      background-color: $white;
-      right: rem(15);
-      top: 50%;
-      transform: translate(0, -50%) rotate(90deg);
-      transition: all .3s;
-    }
-    &.active {
-      &::after {
-        transform: translateY(-50%) rotate(0);
-      }
-    }
-    &.question {
-      span {
-        &::before {
-          content:'Q.';
-          color: $color04;
-          font-size: rem(20);
-          font-weight: bold;
-          margin-right: .5em;
-        }
-      }
-    }
-  }
-  &__content {
-    background-color: $white;
-    display: none;
-    padding: 15px;
-    &.answer {
-      &::before {
-        content:'A.';
-        color: $color04;
-        font-size: rem(20);
-        font-weight: bold;
-        margin-right: .5em;
-      }
-    }
-  }
-}
-
-
 
 
 /**
