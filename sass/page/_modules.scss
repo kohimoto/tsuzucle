@@ -712,6 +712,7 @@ forestバナー
 /**
 ニュース l-news
 ----------------------------------------------**/
+
 .l-news__list {
   background: $white;
   margin-left: calc((100% - rem(1145)) / 2);
@@ -720,7 +721,7 @@ forestバナー
   @include xl {
     margin-left: rem(80);
   }
-  a {
+  .l-news__list__inner a {
     padding: rem(30) rem(0);
     display: block;
     border-bottom: 1px solid $color05;

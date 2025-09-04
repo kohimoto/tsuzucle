@@ -1,0 +1,22 @@
+@use "global" as *;
+.p-section__news {
+  .l-news__list {
+    margin-bottom: rem(112);
+  }
+  .l-news__list__inner {
+    padding-bottom: rem(70);
+  }
+  .nav-links {
+    color: $black-01;
+    max-width: rem(970);
+    li {
+      .page-numbers {
+        &.current {
+          background: $black-01;
+          color: $white;
+        }
+      }
+    }
+  }
+
+}
