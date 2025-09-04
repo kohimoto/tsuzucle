@@ -1,9 +1,11 @@
 @use "global" as *;
 body {
   background-color: $black-01;
-  background-image: url('../images/common/bg-bar.svg');
-  background-repeat: repeat-y;
-  background-position: center;
+  &.bg {
+    background-image: url('../images/common/bg-bar.svg');
+    background-repeat: repeat-y;
+    background-position: center;
+  }
 }
 
 /**

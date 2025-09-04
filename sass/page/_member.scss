@@ -1,0 +1,59 @@
+@use "global" as *;
+.p-section__member {
+  .l-banner {
+    padding-bottom: rem(205);
+  }
+  .p-member__list {
+    padding-bottom: rem(112);
+    a {
+      display: block;
+      transition: all 0.3s;
+      filter: brightness(1);
+      &:hover {
+        filter: brightness(1.1);
+        img {
+          width: 105%;
+          max-width: 105%;
+        }
+
+      }
+    }
+  }
+  .p-member__list__card-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: rem(40);
+    width: 100%;
+    padding-bottom: rem(60);
+  }
+
+  .p-member__list__card-image {
+    overflow: hidden;
+    aspect-ratio: 254 / 320;
+    position: relative;
+    border-radius: rem(5);
+    img {
+      width: 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      transition: all 0.7s;
+    }
+  }
+  .p-member__list__card-content {
+    color: $white;
+    display: grid;
+    gap: rem(8);
+    margin-top: rem(16);
+  }
+  .p-member__list__card-name {
+    font-size:  clamp(16px, rem(18), 18px);
+  }
+  .p-member__list__card-kana {
+    font-size:  clamp(12px, rem(14), 14px);
+  }
+  .p-member__list__card-position {
+    font-size:  clamp(12px, rem(14), 14px);
+  }
+}
