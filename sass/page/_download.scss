@@ -1,0 +1,19 @@
+@use "global" as *;
+.p-section__download {
+  .p-download__list {
+    padding-bottom: rem(112);
+  }
+
+  .l-card__list {
+    padding-bottom: rem(60);
+  }
+  .card {
+    &:hover {
+      img {
+        filter: brightness(1.0);
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}

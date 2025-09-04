@@ -662,6 +662,28 @@ footer
       font-size: 11px;
     }
   }
+  .card-button {
+    margin-top: rem(8);
+    a {
+      color: $white;
+      padding: rem(12) rem(30);
+      border: 1px solid $white;
+      border-radius: rem(10);
+      display: inline-flex;
+      gap: rem(10);
+      font-size: 12px;
+      img {
+        position: relative;
+        left: 0;
+        transition: all 0.3s;
+      }
+      &:hover {
+        img {
+          left: rem(4);
+        }
+      }
+    }
+  }
 }
 
 

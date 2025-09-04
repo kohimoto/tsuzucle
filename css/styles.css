@@ -983,6 +983,29 @@ footer
   color: #0A101C;
   font-size: 11px;
 }
+.l-card__list-lands .card-button {
+  margin-top: 0.5rem;
+}
+.l-card__list-lands .card-button a {
+  color: #fff;
+  padding: 0.75rem 1.875rem;
+  border: 1px solid #fff;
+  border-radius: 0.625rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  gap: 0.625rem;
+  font-size: 12px;
+}
+.l-card__list-lands .card-button a img {
+  position: relative;
+  left: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.l-card__list-lands .card-button a:hover img {
+  left: 0.25rem;
+}
 
 /**
 フッダー/ダウンロード・CONTACTリンク
@@ -1940,4 +1963,17 @@ body.bg {
 }
 .p-section__seminar .p-seminar__list {
   padding-bottom: 7rem;
+}
+
+.p-section__download .p-download__list {
+  padding-bottom: 7rem;
+}
+.p-section__download .l-card__list {
+  padding-bottom: 3.75rem;
+}
+.p-section__download .card:hover img {
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+  width: 100%;
+  max-width: 100%;
 }
