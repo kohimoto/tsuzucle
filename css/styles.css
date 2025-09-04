@@ -592,6 +592,13 @@ footer
   background: rgba(255, 255, 255, 0.5);
 }
 
+.c-ttl-text {
+  font-size: clamp(14px, 1rem, 16px);
+  color: #fff;
+  padding-bottom: 3.75rem;
+  line-height: 1.75;
+}
+
 .c-btn-01 {
   border: 1px solid #0A101C;
   border-radius: 0.9375rem;
@@ -922,7 +929,7 @@ footer
 }
 
 .card-title {
-  font-size: clamp(15px, 1rem, 16px);
+  font-size: clamp(14px, 1rem, 16px);
   font-weight: 700;
 }
 
@@ -945,6 +952,36 @@ footer
   padding: 0.1875rem 0.875rem 0.0625rem;
   border-radius: 1.25rem;
   white-space: nowrap;
+}
+
+/**
+セミナーカード
+----------------------------------------------**/
+.l-card__list-lands {
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+}
+.l-card__list-lands .card-lands {
+  color: #fff;
+}
+.l-card__list-lands .card-image {
+  aspect-ratio: 354/198;
+  margin-bottom: 0.1875rem;
+  position: relative;
+  overflow: hidden;
+}
+.l-card__list-lands .card-image img {
+  aspect-ratio: 354/198;
+}
+.l-card__list-lands .card-title {
+  font-weight: 400;
+}
+.l-card__list-lands .card-content {
+  font-size: clamp(12px, 0.75rem, 12px);
+}
+.l-card__list-lands .card-tag span {
+  color: #0A101C;
+  font-size: 11px;
 }
 
 /**
@@ -1896,4 +1933,11 @@ body.bg {
   color: #0A101C;
   background: #E8F1FF;
   padding: 0.4375rem 0.4375rem 0.3125rem 0.4375rem;
+}
+
+.p-section__seminar .l-card__list-lands {
+  padding-bottom: 3.75rem;
+}
+.p-section__seminar .p-seminar__list {
+  padding-bottom: 7rem;
 }

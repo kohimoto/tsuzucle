@@ -345,6 +345,12 @@ footer
     }
   }
 }
+.c-ttl-text {
+  font-size:  clamp(14px, rem(16), 16px);
+  color: $white;
+  padding-bottom: rem(60);
+  line-height: 1.75;
+}
 
 .c-btn-01 {
   border: 1px solid $black-01;
@@ -607,7 +613,7 @@ footer
   }
 }
 .card-title {
-  font-size:  clamp(15px, rem(16), 16px);
+  font-size:  clamp(14px, rem(16), 16px);
   font-weight: $bold;
 }
 .card-content {
@@ -624,6 +630,37 @@ footer
     padding: rem(3) rem(14) rem(1);
     border-radius: rem(20);
     white-space: nowrap;
+  }
+}
+
+/**
+セミナーカード
+----------------------------------------------**/
+.l-card__list-lands {
+  grid-template-columns: repeat(3, 1fr);
+  .card-lands {
+    color: $white;
+  }
+  .card-image {
+    aspect-ratio: 354 / 198;
+    margin-bottom: rem(3);
+    position: relative;
+    overflow: hidden;
+    img {
+      aspect-ratio: 354 / 198;
+    }
+  }
+  .card-title {
+    font-weight: $normal;
+  }
+  .card-content {
+    font-size:  clamp(12px, rem(12), 12px);
+  }
+  .card-tag {
+    span {
+      color: $black-01;
+      font-size: 11px;
+    }
   }
 }
 

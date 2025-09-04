@@ -1,0 +1,9 @@
+@use "global" as *;
+.p-section__seminar {
+  .l-card__list-lands {
+    padding-bottom: rem(60);
+  }
+  .p-seminar__list {
+    padding-bottom: rem(112);
+  }
+}
