@@ -560,6 +560,12 @@ footer
 /**
 導入事例カード
 ----------------------------------------------**/
+.l-card__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: rem(40);
+  width: 100%;
+}
 .card {
   display: grid;
   gap: rem(12);
@@ -597,6 +603,7 @@ footer
     right: rem(20);
     padding: rem(10) rem(15);
     border-radius: rem(5);
+
   }
 }
 .card-title {
@@ -610,11 +617,13 @@ footer
 .card-tag {
   font-size:  clamp(12px, rem(14), 14px);
   display: flex;
+  flex-wrap: wrap;
   gap: rem(12);
   span {
     background: $color04;
-    padding: rem(3) rem(14);
+    padding: rem(3) rem(14) rem(1);
     border-radius: rem(20);
+    white-space: nowrap;
   }
 }
 
@@ -880,4 +889,56 @@ forestバナー
       }
     }
   }
+}
+
+
+
+
+/**
+selectbox  セレクトボックス
+----------------------------------------------**/
+.l-selectbox {
+  position: relative;
+}
+.l-selectbox::before,
+.l-selectbox::after {
+  position: absolute;
+  content: '';
+  pointer-events: none;
+}
+.l-selectbox::before {
+  right: 0;
+  display: inline-block;
+  width: rem(45);
+  height: rem(40);
+  border-radius: rem(5);
+  background-color: $white;
+  content: '';
+}
+.l-selectbox::after {
+  position: absolute;
+  top: 50%;
+  right: 1.4em;
+  transform: translate(50%, -50%) rotate(45deg);
+  width: 6px;
+  height: 6px;
+  border-bottom: 1.5px solid $black-01;
+  border-right: 1.5px solid $black-01;
+  content: '';
+}
+.l-selectbox select {
+  background: $white;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 40px;
+  padding: rem(8) rem(45) rem(8) rem(20);
+  border-radius: rem(5);
+  color: $black-01;
+  font-size:  clamp(16px, rem(18), 18px);
+  cursor: pointer;
+}
+
+.l-selectbox select:focus {
+  outline: 1px solid #2589d0;
 }

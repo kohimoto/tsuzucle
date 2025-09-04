@@ -1,0 +1,28 @@
+@use "global" as *;
+.p-section__works {
+  .l-card__cat {
+    display: flex;
+    gap: rem(30);
+    margin-bottom: rem(80);
+  }
+  .p-works__list {
+    padding-bottom: rem(112);
+  }
+  .l-card__list {
+    padding-bottom: rem(80);
+      }
+  .card {
+    color: $white;
+    .card-tag {
+      span {
+        color: $black-01;
+      }
+    }
+    .card-image__tag {
+      font-size: 11px;
+      color: $black-01;
+      background: $color06;
+      padding: rem(7) rem(7) rem(5) rem(7);
+    }
+  }
+}

@@ -58,6 +58,7 @@ $color02: #252D3B; // grey
 $color03: #0E337A; //blue
 $color04: #F4F6F8; //light grey
 $color05: #D9DBDF; //border grey
+$color06: #E8F1FF; //light blue
 
 ////////////////////
 // メディアクエリとブレークポイントの設定
@@ -146,7 +147,7 @@ h1,h2,h3,h4 {
 }
 
 .ja {
-  font-family: $base-font-family;  
+  font-family: $base-font-family;
 }
 .en {
   font-family: $English-font-family-01;
