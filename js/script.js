@@ -96,12 +96,12 @@ $(function () {
 });
 
 // アコーディオンメニュー
-$(".section-accordion__ttl").click(function () {
-  $(this).siblings(".section-accordion__content").stop().slideToggle();
-  $(".section-accordion__ttl")
+$(".c-accordion__ttl").click(function () {
+  $(this).siblings(".c-accordion__content").stop().slideToggle();
+  $(".c-accordion__ttl")
     .not($(this))
-    .siblings(".section-accordion__content")
+    .siblings(".c-accordion__content")
     .slideUp();
   $(this).toggleClass("active");
-  $(".section-accordion__ttl").not($(this)).removeClass("active");
+  $(".c-accordion__ttl").not($(this)).removeClass("active");
 });
