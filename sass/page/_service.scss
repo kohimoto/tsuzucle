@@ -1,0 +1,21 @@
+@use "global" as *;
+.p-section__tap-service {
+  .l-logo__list {
+    margin-bottom: rem(100);
+  }
+  .l-card__list__btn {
+    margin-top: rem(60);
+    display: grid;
+    place-content: center;
+  }
+  .p-section__tap-service__faq {
+    padding-bottom: rem(130);
+  }
+  .p-section__relatedcompanies {
+    background: $white;
+    padding: rem(100) 0 rem(100);
+     .l-logo__list {
+       margin-bottom: 0;
+     }
+  }
+}

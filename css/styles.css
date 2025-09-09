@@ -394,11 +394,12 @@ serviceページ共通ブロック
           transform: translateY(3px);
 }
 .l-page-head__menu__item .en2 {
-  font-size: 0.875rem;
+  font-size: clamp(12px, 0.875rem, 14px);
   letter-spacing: 0.04em;
 }
 .l-page-head__menu__item .ttl {
   font-weight: bold;
+  font-size: clamp(14px, 1rem, 16px);
 }
 .l-page-head__menu__item img {
   width: 7px;
@@ -434,7 +435,7 @@ serviceページ共通ブロック
 }
 .c-block-strength__ttl-02 {
   margin-top: 2.3125rem;
-  font-size: 1.75rem;
+  font-size: clamp(22px, 1.75rem, 28px);
   line-height: 1.4;
   letter-spacing: 0.04em;
 }
@@ -442,6 +443,7 @@ serviceページ共通ブロック
   margin-top: 1.875rem;
   letter-spacing: 0.06em;
   line-height: 1.6;
+  font-size: clamp(14px, 1rem, 16px);
 }
 .c-block-strength__list {
   margin-top: 3.125rem;
@@ -462,16 +464,19 @@ serviceページ共通ブロック
       -ms-flex-align: center;
           align-items: center;
   letter-spacing: 0.06em;
+  gap: 1.5625rem;
 }
 .c-block-strength__list__item__ttl {
   line-height: 1.4;
   font-weight: bold;
+  white-space: nowrap;
+  font-size: clamp(14px, 1rem, 16px);
 }
 .c-block-strength__list__item__ttl::before {
   counter-increment: number 1;
   content: counter(number, decimal-leading-zero) ".";
   font-family: "felix-titling", "sans-serif";
-  font-size: 1.25rem;
+  font-size: clamp(18px, 1.25rem, 20px);
   display: block;
   font-weight: normal;
   margin-bottom: 1.25rem;
@@ -479,6 +484,7 @@ serviceページ共通ブロック
 .c-block-strength__list__item p {
   max-width: 26.25rem;
   line-height: 1.8;
+  font-size: clamp(14px, 1rem, 16px);
 }
 .c-block-strength__list__item + .c-block-strength__list__item {
   margin-top: 2.125rem;
@@ -498,9 +504,11 @@ serviceページ共通ブロック
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0 2.5rem;
+  gap: 1.25rem;
 }
 .c-block-content__ttl-01 {
   width: 7.3125rem;
+  min-width: 100px;
 }
 .c-block-content__menu {
   display: -ms-grid;
@@ -559,8 +567,9 @@ serviceページ共通ブロック
   height: 100%;
   gap: 0.625rem;
   color: #fff;
-  font-size: 0.875rem;
+  font-size: clamp(13px, 0.875rem, 14px);
   letter-spacing: 0.06em;
+  white-space: nowrap;
 }
 .c-block-content__menu__item a:hover img {
   -webkit-transform: translateY(3px);
@@ -592,19 +601,20 @@ serviceページ共通ブロック
 }
 .c-block-content__list__item figure {
   width: 16.25rem;
+  min-width: 100px;
 }
 .c-block-content__list__item__right {
   max-width: 47.75rem;
   letter-spacing: 0.1em;
 }
 .c-block-content__list__item__ttl {
-  font-size: 1.25rem;
+  font-size: clamp(17px, 1.25rem, 20px);
   line-height: 1.4;
   letter-spacing: 0.1em;
 }
 .c-block-content__list__item__txt {
   margin-top: 1rem;
-  font-size: 0.75rem;
+  font-size: 12px;
   line-height: 1.6;
 }
 .c-block-content__list__item__tag {
@@ -615,7 +625,7 @@ serviceページ共通ブロック
   -webkit-column-gap: 0.75rem;
      -moz-column-gap: 0.75rem;
           column-gap: 0.75rem;
-  font-size: 0.6875rem;
+  font-size: clamp(10px, 0.6875rem, 11px);
   line-height: 1.4;
 }
 .c-block-content__list__item__tag li {
@@ -625,6 +635,7 @@ serviceページ共通ブロック
   min-width: 7.875rem;
   text-align: center;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .c-block-faq {
@@ -635,24 +646,30 @@ serviceページ共通ブロック
   border-radius: 0.9375rem;
   padding: 6.25rem 6.75rem;
   color: #02112D;
-  font-size: 0.875rem;
+  font-size: clamp(13px, 0.875rem, 14px);
   line-height: 1.4;
   letter-spacing: 0.06em;
 }
 
+.c-accordion {
+  display: -ms-grid;
+  display: grid;
+  gap: 1.5rem;
+}
 .c-accordion__ttl {
   background-color: #F4F6F8;
-  padding: 1.25rem 5.5rem 1.25rem 3.875rem;
+  padding: 1.25rem 5.5rem 1.25rem 1.4375rem;
   position: relative;
   cursor: pointer;
+  border: 5px 5px 0 0;
 }
 .c-accordion__ttl::before {
   position: absolute;
   content: "";
   display: block;
-  width: 0.625rem;
-  height: 0.125rem;
-  background-color: #fff;
+  width: 1.0625rem;
+  height: 1px;
+  background-color: #02112D;
   right: 0.9375rem;
   top: 50%;
   -webkit-transform: translate(0, -50%);
@@ -662,9 +679,9 @@ serviceページ共通ブロック
   position: absolute;
   content: "";
   display: block;
-  width: 0.625rem;
-  height: 0.125rem;
-  background-color: #fff;
+  width: 1.0625rem;
+  height: 1px;
+  background-color: #02112D;
   right: 0.9375rem;
   top: 50%;
   -webkit-transform: translate(0, -50%) rotate(90deg);
@@ -676,26 +693,49 @@ serviceページ共通ブロック
   -webkit-transform: translateY(-50%) rotate(0);
           transform: translateY(-50%) rotate(0);
 }
+.c-accordion__ttl.active + .c-accordion__content {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+.c-accordion__ttl span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
 .c-accordion__ttl.question span::before {
   content: "Q.";
   color: #0E337A;
   font-size: 1.5rem;
   letter-spacing: 0.04em;
   margin-right: 1.25rem;
+  position: relative;
+  top: 0.3125rem;
   font-family: "Figtree", "sans-serif";
 }
 .c-accordion__content {
   background-color: #fff;
   display: none;
-  padding: 15px;
+  padding: 1.25rem 5.5rem 1.25rem 1.4375rem;
+  border: 1px solid #F4F6F8;
+  border: 0 0 5px 5px;
 }
-.c-accordion__content.answer::before {
+.c-accordion__content.answer span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.c-accordion__content.answer span::before {
   content: "A.";
   color: #0E337A;
   font-family: "Figtree", "sans-serif";
   font-size: 1.5rem;
-  font-weight: bold;
-  margin-right: 1.25rem;
+  margin-right: 1.1875rem;
+  position: relative;
+  top: -0.3125rem;
 }
 
 /**
@@ -932,6 +972,7 @@ footer
   font-size: clamp(10px, 0.875rem, 14px);
   left: 0.5rem;
   position: relative;
+  letter-spacing: 0.06em;
 }
 .c-ttl-01.c-color-white {
   color: #fff;
@@ -1279,6 +1320,7 @@ footer
 .card-title {
   font-size: clamp(14px, 1rem, 16px);
   font-weight: 700;
+  letter-spacing: 0.1em;
 }
 
 .card-content {
@@ -1632,6 +1674,113 @@ selectbox  セレクトボックス
 
 .l-selectbox select:focus {
   outline: 1px solid #2589d0;
+}
+
+/**
+ロゴリスト
+----------------------------------------------**/
+.l-logo__list {
+  display: -ms-grid;
+  display: grid;
+  gap: 0.8125rem;
+}
+.l-logo__list ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media screen and (max-width: 1025px) {
+  .l-logo__list ul {
+    gap: 3.75rem;
+  }
+}
+.l-logo__list ul li img {
+  width: auto;
+}
+@media screen and (max-width: 1025px) {
+  .l-logo__list ul li img {
+    height: auto;
+  }
+}
+
+/**
+下部のバナー
+----------------------------------------------**/
+.l-banner__bottom {
+  padding: 7.875rem 0 7rem;
+}
+
+.l-banner__col {
+  display: -ms-grid;
+  display: grid;
+  gap: 2.5rem;
+  color: #fff;
+}
+.l-banner__col__card {
+  border-radius: 0.9375rem;
+  position: relative;
+  border-radius: 0.9375rem;
+  overflow: hidden;
+  height: 20.625rem;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+  background-image: url(../images/tap-service/banner.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+.l-banner__col__card::after {
+  content: "";
+  background-image: url(../images/common/cover.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.l-banner__col__card:hover {
+  background-size: 103% 103%;
+  -webkit-filter: brightness(1.4);
+          filter: brightness(1.4);
+}
+.l-banner__col__content {
+  position: relative;
+  z-index: 2;
+  width: calc(440px + 6.25rem);
+  margin: 0 0 0 auto;
+  padding: 6.25rem 3.125rem 6.25rem;
+  height: 20.625rem;
+}
+@media screen and (max-width: 1025px) {
+  .l-banner__col__content {
+    width: calc(400px + 6.25rem);
+  }
+}
+.l-banner__col__content h3 {
+  font-size: clamp(18px, 1.375rem, 22px);
+}
+.l-banner__col__content > p {
+  font-size: clamp(13px, 0.875rem, 14px);
+  padding: 0.875rem 0 0rem;
+}
+.l-banner__col__content-tag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.125rem;
+  border-radius: 0.625rem;
+}
+.l-banner__col__content-tag p {
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.l-banner__col__content-tag p small {
+  margin-right: 0.3125rem;
 }
 
 body {
@@ -2256,4 +2405,24 @@ body.bg {
           filter: brightness(1);
   width: 100%;
   max-width: 100%;
+}
+
+.p-section__tap-service .l-logo__list {
+  margin-bottom: 6.25rem;
+}
+.p-section__tap-service .l-card__list__btn {
+  margin-top: 3.75rem;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+.p-section__tap-service .p-section__tap-service__faq {
+  padding-bottom: 8.125rem;
+}
+.p-section__tap-service .p-section__relatedcompanies {
+  background: #fff;
+  padding: 6.25rem 0 6.25rem;
+}
+.p-section__tap-service .p-section__relatedcompanies .l-logo__list {
+  margin-bottom: 0;
 }

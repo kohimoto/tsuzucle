@@ -98,10 +98,5 @@ $(function () {
 // アコーディオンメニュー
 $(".c-accordion__ttl").click(function () {
   $(this).siblings(".c-accordion__content").stop().slideToggle();
-  $(".c-accordion__ttl")
-    .not($(this))
-    .siblings(".c-accordion__content")
-    .slideUp();
   $(this).toggleClass("active");
-  $(".c-accordion__ttl").not($(this)).removeClass("active");
 });
