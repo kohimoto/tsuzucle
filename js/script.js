@@ -28,6 +28,19 @@ jQuery(function ($) {
     return false;
   });
 
+  // ページ内リンク
+  $('a[href^="#"]').on('click', function(e) {
+    e.preventDefault(); 
+    var target = $(this.hash);
+    if (target.length) {
+      $('html, body').animate(
+        { scrollTop: target.offset().top- 80 }, // 移動先の位置
+        600, // スクロール時間（ミリ秒）
+        'swing'
+      );
+    }
+  });
+
   //ドロワーメニュー
   $(".l-header__bar").click(function () {
     $(".l-header").toggleClass("is-open");
