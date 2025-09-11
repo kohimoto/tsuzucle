@@ -324,7 +324,7 @@ footer
 .c-ttl-01 {
   text-align: center;
   font-size:  clamp(30px, rem(55), 55px);
-  margin-bottom: rem(60);
+  margin-bottom: rem(50);
   display: flex;
   align-items: center;
   gap: rem(15);
@@ -353,7 +353,12 @@ footer
   padding-bottom: rem(60);
   line-height: 1.75;
 }
-
+.c-color-white {
+  color: $white;
+}
+.c-color-black {
+  color: $black-01;
+}
 .c-btn-01 {
   border: 1px solid $black-01;
   border-radius: rem(15);
@@ -751,6 +756,7 @@ forestバナー
   padding: rem(125) 0;
   background: $black-01;
   &__block {
+    color: $black-01;
     background: $color04;
     padding: rem(70) rem(60) rem(80);
     position: relative;
