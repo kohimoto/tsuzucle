@@ -14,6 +14,10 @@
   z-index: 11;
   padding-top: rem(20);
   padding-bottom: rem(20);
+  @include mq {
+    width: calc(100% - rem(40));
+    height: rem(38);
+  }
   &__inner {
     display: flex;
     width: 100%;
@@ -24,19 +28,28 @@
     backdrop-filter: blur(10px);
     border-radius: 10px;
     padding: rem(19) rem(30);
+    @include mq {
+      padding: rem(10) rem(20);
+    }
   }
   &__bar {
     width: rem(70);
     height: rem(50);
-    background: linear-gradient(48deg, rgba(123, 196, 241, 0.80) -5.62%, rgba(90, 180, 181, 0.80) 100%);
     margin: 0 0 0 auto;
     display: flex;
     align-items: center;
     place-content: center;
+    @include mq {
+      width: rem(26);
+      height: rem(26);
+    }
     &__inner {
       display: grid;
       gap: rem(8);
       place-content: center;
+      @include mq {
+        gap: rem(6);
+      }
     }
     span {
       width: rem(35);
@@ -44,11 +57,17 @@
       background: $white;
       display: block;
       transition: all 0.3s;
+      @include mq {
+        width: rem(26);
+      }
     }
   }
   &__logo {
     width: rem(134);
     transition: all 0.3s;
+    @include mq {
+      width: rem(74);
+    }
     &:hover {
       opacity: 0.7;
     }
@@ -120,6 +139,9 @@
 .l-header__inner {
   height: rem(60) !important;
   top: rem(20) !important;
+  @include mq {
+    height: rem(38) !important;
+  }
 }
 .midnightInner {
   display: flex;
@@ -192,6 +214,11 @@ footer
     align-items: center;
     place-content: space-between;
     padding: rem(40) rem(80) 0;
+    @include mq {
+      padding: rem(40) rem(20) 0;
+      display: grid;
+      gap: rem(40);
+    }
     .l-footer__logo {
       width: rem(167);
       transition: all 0.3s;
@@ -205,20 +232,31 @@ footer
   }
   .l-footer__menu__list {
     width: calc(100% - rem(167));
+    @include mq {
+      width: 100%;
+    }
     ul {
       display: flex;
       place-content: end;
-      gap: clamp(vwPC(85), vwPC(85), 85px);;
+      gap: clamp(vwPC(85), vwPC(85), 85px);
       @include lg {
         gap: vwPC(50);
       }
-      li {
+      @include mq {
+        display: grid;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        place-content: baseline;
+        place-content: space-between;
+        width: 100%;
       }
       a {
         color: $white;
         font-size: clamp(13px, rem(16), 16px);
         white-space: nowrap;
         transition: all 0.3s;
+        @include mq {
+          font-size: 12px;
+        }
         &:hover {
           opacity: 0.6;
         }
@@ -229,6 +267,11 @@ footer
     display: flex;
     place-content: space-between;
     padding: rem(250) rem(80) rem(28);
+    @include mq {
+      padding: rem(158) rem(20) rem(30);
+      display: grid;
+      gap: rem(25);
+    }
     .l-footer__link-01 {
       display: flex;
       gap: rem(25);
@@ -240,6 +283,11 @@ footer
         align-items: center;
         gap: vwPC(6);
         transition: all 0.3s;
+        @include mq {
+          font-size: clamp(10px, rem(12.73), 12.73px);
+          gap: vwSP(6);
+          white-space: nowrap;
+        }
         &:hover {
           opacity: 0.6;
         }
@@ -253,9 +301,17 @@ footer
     .l-footer__link-02 {
       display: flex;
       gap: vwPC(24);
+      @include mq {
+        gap: 19px;
+      }
       .icon-sns {
         width: rem(18);
         height: rem(18);
+        @include mq {
+          width: 16px;
+          height: 16px;
+
+        }
       }
     }
   }
@@ -266,13 +322,28 @@ footer
     place-content: space-between;
     border-top: 1px solid $color02;
     padding: rem(20) 0;
+    @include mq {
+      display: grid;
+      gap: 11px;
+      padding: rem(20) 0 rem(30);
+    }
     p {
       font-size: 11px;
       padding-left: rem(80);
+      @include mq {
+        padding-right: rem(20);
+        padding-left: rem(20);
+        order: 2;
+      }
     }
     &__link {
       font-size: 12px;
       padding-right: rem(80);
+      @include mq {
+        padding-right: rem(20);
+        padding-left: rem(20);
+        order: 1;
+      }
     }
   }
 }
@@ -289,6 +360,11 @@ footer
   top: rem(-40);
   transition: all 0.3s;
   filter: brightness(1);
+  @include mq {
+    bottom: rem(235);
+    top: auto;
+    right: rem(20);
+  }
   &:hover {
     //opacity: 0.7;
     filter: brightness(1.5);
@@ -329,16 +405,27 @@ footer
   align-items: center;
   gap: rem(15);
   color: $color01;
+  @include mq {
+    font-size:  clamp(30px, rem(34), 34px);
+    gap: rem(12);
+    margin-bottom: rem(30);
+  }
   span:not(.en2) {
     height: 1px;
     background: rgba($color01,0.5);
     width: rem(50);
+    @include mq {
+      width: rem(30);
+    }
   }
   .en2 {
     font-size:  clamp(10px, rem(14), 14px);
     left: rem(8);
     position: relative;
     letter-spacing: 0.06em;
+    @include mq {
+      font-size:  clamp(10px, rem(12), 12px);
+    }
   }
   &.c-color-white {
     color: $white;
@@ -352,6 +439,10 @@ footer
   color: $white;
   padding-bottom: rem(60);
   line-height: 1.75;
+  @include mq {
+    font-size:  clamp(13px, rem(14), 14px);
+    padding-bottom: rem(47);
+  }
 }
 .c-color-white {
   color: $white;
@@ -364,12 +455,18 @@ footer
   border-radius: rem(15);
   font-size:  clamp(14px, rem(16), 16px);
   color: $black-01;
-  font-weight: $medium;
+  font-weight: $bold;
   display: inline-flex;
   align-items: center;
   padding: rem(14) rem(40);
   transition: all 0.3s;
   filter: brightness(1);
+  @include mq {
+    font-size: 12px;
+    padding: rem(10) rem(30);
+    border-radius: 10px;
+    font-weight: $bold;
+  }
   &:hover {
     opacity: 0.7;
     filter: brightness(2);
@@ -384,6 +481,14 @@ footer
     position: relative;
     left: rem(0);
     transition: all 0.3s;
+    @include mq {
+      width: rem(11);
+      height: rem(11);
+    }
+  }
+  &__wrap {
+    display: grid;
+    place-content: center;
   }
 }
 .c-ttl__wrap {
@@ -391,6 +496,9 @@ footer
   place-content: space-between;
   align-items: center;
   padding-bottom: rem(60);
+  @include mq {
+    padding-bottom: rem(25);
+  }
   .c-ttl-01 {
     margin-bottom: 0;
   }
@@ -465,6 +573,9 @@ footer
   line-height: 2;
   transition: all 0.3s;
   filter: brightness(1);
+  @include mq {
+    display: none;
+  }
   &:hover {
     filter: brightness(1.3);
   }
@@ -483,6 +594,7 @@ footer
   margin-left: rem(24);
   .swiper {
     margin-top: rem(40);
+
   }
   .slides-wrapper {
     padding-bottom: rem(50);
@@ -504,6 +616,12 @@ footer
     margin-top: rem(-30);
     background-image: url(../images/common/arrow-circle.svg);
     right: vwPC(60);
+    background-size: 100%;
+    @include mq {
+      width: rem(51);
+      height: rem(51);
+      margin-top: rem(-70);
+    }
     &::after {
       content: none;
     }
@@ -578,6 +696,16 @@ footer
   grid-template-columns: repeat(4, 1fr);
   gap: rem(40);
   width: 100%;
+  @include mq {
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(40) rem(20);
+  }
+  @include sm {
+    grid-template-columns: repeat(1, 1fr);
+    padding-left: rem(20);
+    padding-right: rem(20);
+    gap: rem(55);
+  }
 }
 .card {
   display: grid;
@@ -616,23 +744,41 @@ footer
     right: rem(20);
     padding: rem(10) rem(15);
     border-radius: rem(5);
-
+    @include mq {
+      font-size: 12px;
+      padding: 8px 10px;
+      right: 14px;
+      bottom: 14px;
+    }
   }
 }
 .card-title {
   font-size:  clamp(14px, rem(16), 16px);
   font-weight: $bold;
   letter-spacing: 0.1em;
+  @include mq {
+    font-size:  clamp(14px, rem(14), 14px);
+  }
+  @include sm {
+    font-size:  clamp(14px, rem(16), 16px);
+  }
 }
 .card-content {
   font-size:  clamp(13px, rem(14), 14px);
   line-height: 1.75;
+  @include mq {
+    font-size: 12px;
+  }
 }
 .card-tag {
   font-size:  clamp(12px, rem(14), 14px);
   display: flex;
   flex-wrap: wrap;
   gap: rem(12);
+  @include mq {
+    font-size: 12px;
+    gap: rem(10);
+  }
   span {
     background: $color04;
     padding: rem(3) rem(14) rem(1);
@@ -646,6 +792,12 @@ footer
 ----------------------------------------------**/
 .l-card__list-lands {
   grid-template-columns: repeat(3, 1fr);
+  @include mq {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include sm {
+    grid-template-columns: repeat(1, 1fr);
+  }
   .card-lands {
     color: $white;
   }
@@ -704,6 +856,10 @@ footer
     display: grid;
     grid-template-columns: calc(50% - rem(24)) calc(50% - rem(24));
     gap: rem(48);
+    @include mq {
+      grid-template-columns: 100%;
+      gap: rem(30);
+    }
   }
   a {
     display: grid;
@@ -716,17 +872,29 @@ footer
     border-radius: rem(15);
     overflow: hidden;
     filter: brightness(1);
+    @include mq {
+      aspect-ratio: 1 / 1;
+    }
     &:nth-child(1) {
       background-image: url(../images/common/link-bg01.png);
+      background-repeat: no-repeat;
       background-size: 100%;
       width: 100%;
       height: 100%;
+      @include mq {
+        background-image: url(../images/common/link-bg01-sp.png);
+      }
     }
     &:nth-child(2) {
       background-image: url(../images/common/link-bg02.png);
+      background-repeat: no-repeat;
       background-size: 100%;
       width: 100%;
       height: 100%;
+      @include mq {
+        background-image: url(../images/common/link-bg02-sp.png);
+        background-size: 101%;
+      }
     }
     &:hover {
       background-size: 105%;
@@ -736,15 +904,24 @@ footer
       display: block;
       font-size:  clamp(25px, rem(40), 40px);
       margin-bottom: rem(18);
+      @include mq {
+        font-size:  clamp(32px, rem(36), 36px);
+      }
       small {
         display: block;
         font-size:  clamp(16px, rem(20), 20px);
         font-weight: $normal;
         margin-top: rem(10);
+        @include mq {
+          font-size:  clamp(14px, rem(16), 16px);
+        }
       }
     }
     p {
       font-size:  clamp(14px, rem(16), 16px);
+      @include mq {
+        font-size:  clamp(12px, rem(12), 12px);
+      }
     }
   }
 }
@@ -755,6 +932,9 @@ forestバナー
 .l-banner {
   padding: rem(125) 0;
   background: $black-01;
+  @include mq {
+    padding: rem(80) 0;
+  }
   &__block {
     color: $black-01;
     background: $color04;
@@ -765,15 +945,46 @@ forestバナー
     border-radius: rem(15);
     display: grid;
     align-items: center;
+    @include mq {
+      padding: rem(40) rem(20) rem(40);
+      height: rem(678);
+      align-items: baseline;
+    }
+    &__ttl {
+      display: flex;
+      align-items: center;
+      gap: rem(27);
+      margin-bottom: rem(35);
+      @include mq {
+        gap: rem(15);
+      }
+      i {
+        width: rem(43.5);
+        height: 1px;
+        background: #3D5072;
+      }
+      p {
+        font-size:  clamp(14px, rem(15), 15px);
+        letter-spacing: 0.9px;
+      }
+    }
     &__content {
       width: rem(420);
       max-width: 45%;
       font-size:  clamp(14px, rem(16), 16px);
       line-height: 1.75;
+      @include mq {
+        z-index: 2;
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(12px, rem(12), 12px);
+      }
     }
     img:not(.l-banner__bg) {
       width: rem(102);
-      margin-bottom: rem(35);
+      @include mq {
+        width: rem(90);
+      }
     }
     .l-banner__bg {
       position: absolute;
@@ -782,6 +993,47 @@ forestバナー
       width: rem(612);
       height: 100%;
       max-width: 54%;
+      @include mq {
+        //position: relative;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+/**
+Tsuzucleバナー
+----------------------------------------------**/
+.l-banner__solution {
+  background: $white;
+  padding: rem(100) 0;
+  @include mq {
+    padding: rem(80) 0;
+  }
+  .l-banner__solution__block {
+    background: #E7ECF5;
+    padding: rem(60);
+    display: grid;
+    gap: rem(20);
+    border-radius: rem(10);
+    @include mq {
+      padding: rem(60) rem(40);
+    }
+    &>img {
+      width: rem(200);
+      display: block;
+      margin: 0 auto rem(0);
+      @include mq {
+        width: rem(160);
+      }
+    }
+    p {
+      font-size:  clamp(14px, rem(16), 16px);
+      text-align: center;
+      @include mq {
+        font-size:  clamp(12px, rem(13), 13px);
+      }
     }
   }
 }
@@ -797,6 +1049,12 @@ forestバナー
   border-radius: rem(20) 0 0 rem(20);
   @include xl {
     margin-left: rem(80);
+  }
+  @include mq {
+    padding: rem(60) rem(30);
+  }
+  @include sm {
+    margin-left: rem(20);
   }
   .l-news__list__inner a {
     padding: rem(30) rem(0);
@@ -814,14 +1072,30 @@ forestバナー
       opacity: 0.7;
       &::after {
         right: rem(20);
+        @include mq {
+          right: 0;
+        }
       }
     }
     dl {
       display: flex;
       padding: 0 rem(60) 0 rem(24);
       gap: rem(24);
+      @include mq {
+        display: grid;
+        gap: rem(10);
+        padding: 0 rem(40) 0 rem(0);
+      }
       dt {
         font-weight: $medium;
+        @include mq {
+          font-size:  clamp(14px, rem(14), 14px);
+        }
+      }
+      dd {
+        @include mq {
+          font-size:  clamp(13px, rem(13), 13px);
+        }
       }
     }
     &::after {
@@ -836,6 +1110,9 @@ forestバナー
       top: 50%;
       transform: translate(-0%, -50%);
       transition: all 0.3s;
+      @include mq {
+        right: 0;
+      }
     }
   }
 }
@@ -847,6 +1124,9 @@ forestバナー
 ----------------------------------------------**/
 .p_section__lower {
   padding-top: rem(165);
+  @include mq {
+    padding-top: rem(100);
+  }
 }
 
 /**
@@ -912,6 +1192,10 @@ selectbox  セレクトボックス
   border-radius: rem(5);
   background-color: $white;
   content: '';
+  @include mq {
+    height: 28px;
+    width: rem(15);
+  }
 }
 .l-selectbox::after {
   position: absolute;
@@ -923,6 +1207,9 @@ selectbox  セレクトボックス
   border-bottom: 1.5px solid $black-01;
   border-right: 1.5px solid $black-01;
   content: '';
+  @include mq {
+    right: 1em;
+  }
 }
 .l-selectbox select {
   background: $white;
@@ -935,6 +1222,11 @@ selectbox  セレクトボックス
   color: $black-01;
   font-size:  clamp(16px, rem(18), 18px);
   cursor: pointer;
+  @include mq {
+    font-size: 13px;
+    padding: rem(5) rem(25) rem(5) rem(15);
+    height: 28px;
+  }
 }
 
 .l-selectbox select:focus {
@@ -945,24 +1237,6 @@ selectbox  セレクトボックス
 ロゴリスト
 ----------------------------------------------**/
 .l-logo__list {
-  display: grid;
-  gap: rem(13);
-  ul {
-    display: flex;
-    place-content: space-between;
-    align-items: center;
-    @include lg {
-      gap: rem(60);
-    }
-    li {
-      img {
-        width: auto;
-        @include lg {
-          height: auto;
-        }
-      }
-    }
-  }
 }
 
 
@@ -971,6 +1245,9 @@ selectbox  セレクトボックス
 ----------------------------------------------**/
 .l-banner__bottom {
   padding: rem(126) 0 rem(112);
+  @include mq {
+    padding: rem(70) 0 rem(70);
+  }
 }
 .l-banner__col {
   display: grid;
@@ -987,6 +1264,13 @@ selectbox  セレクトボックス
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
+    @include mq {
+      background-image: url(../images/tap-service/banner-sp.png);
+      height: auto;
+      aspect-ratio: 350 / 470;
+      display: grid;
+      place-content: end;
+    }
     &::after {
       content: "";
       background-image: url(../images/common/cover.png);
@@ -997,6 +1281,9 @@ selectbox  セレクトボックス
       position: absolute;
       left: 0;
       top: 0;
+      @include mq {
+        content: none;
+      }
     }
 
     &:hover {
@@ -1015,12 +1302,21 @@ selectbox  セレクトボックス
     @include lg {
       width: calc(400px + rem(100));
     }
+    @include mq {
+      width: 100%;
+      position: relative;
+      padding: rem(20) rem(20) rem(20);
+      height: auto;
+    }
     h3 {
       font-size: clamp(18px, rem(22), 22px);
     }
     &>p {
       font-size: clamp(13px, rem(14), 14px);
       padding: rem(14) 0 rem(0);
+      @include mq {
+        font-size: clamp(12px, rem(13), 13px);
+      }
     }
     &-tag {
       background: rgba($white, 0.1);
@@ -1036,5 +1332,18 @@ selectbox  セレクトボックス
       }
 
     }
+  }
+}
+
+.disp-sp {
+  display: none;
+  @include mq {
+    display: block;
+  }
+}
+.disp-pc {
+  display: block;
+  @include mq {
+    display: none;
   }
 }

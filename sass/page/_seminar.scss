@@ -5,5 +5,8 @@
   }
   .p-seminar__list {
     padding-bottom: rem(112);
+    @include mq {
+      padding-bottom: rem(80);
+    }
   }
 }

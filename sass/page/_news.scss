@@ -2,9 +2,15 @@
 .p-section__news {
   .l-news__list {
     margin-bottom: rem(112);
+    @include mq {
+      margin-bottom: rem(80);
+    }
   }
   .l-news__list__inner {
     padding-bottom: rem(70);
+    @include mq {
+      padding-bottom: rem(50);
+    }
   }
   .nav-links {
     color: $black-01;

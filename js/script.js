@@ -4,18 +4,6 @@ jQuery(function ($) {
 
   // この中であればWordpressでも「$」が使用可能になる
   var topBtn = $(".l-pagetop");
-  topBtn.hide();
-  // ボタンの表示設定
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 70) {
-      // 指定px以上のスクロールでボタンを表示
-      topBtn.fadeIn();
-    } else {
-      // 画面が指定pxより上ならボタンを非表示
-      topBtn.fadeOut();
-    }
-  });
-
   // ボタンをクリックしたらスクロールして上に戻る
   topBtn.click(function () {
     $("body,html").animate(
@@ -30,7 +18,7 @@ jQuery(function ($) {
 
   // ページ内リンク
   $('a[href^="#"]').on('click', function(e) {
-    e.preventDefault(); 
+    e.preventDefault();
     var target = $(this.hash);
     if (target.length) {
       $('html, body').animate(
@@ -53,9 +41,13 @@ jQuery(function ($) {
   const swiper = new Swiper(".swiper", {
     loop: true,
     speed: 1800,
-    slidesPerView: "3.7",
-    spaceBetween: 20,
+    slidesPerView: "1.5",
+    spaceBetween: 30,
     breakpoints: {
+      500: {
+        slidesPerView: "2.5",
+        spaceBetween: 20,
+      },
       767: {
         slidesPerView: "3.7",
       },

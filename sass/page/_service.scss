@@ -5,16 +5,27 @@ serviceページ共通ブロック
 ----------------------------------------------**/
 .l-page-head {
   margin-bottom: rem(101);
+  @include mq {
+    margin-bottom: rem(60);
+  }
   &__menu {
     margin-top: rem(77);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: rem(40);
+    @include mq {
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(20);
+      margin-top: rem(20);
+    }
     &__item {
       border-radius: rem(15);
       border: 1px solid rgba(255, 255, 255, 0.2);
       background-color: rgba(255, 255, 255, 0.1);
       padding: rem(34);
+      @include mq {
+        padding: rem(15) rem(40);
+      }
       a {
         display: flex;
         flex-direction: column;
@@ -22,6 +33,9 @@ serviceページ共通ブロック
         align-items: center;
         gap: rem(15);
         color: $white;
+        @include mq {
+          gap: rem(8);
+        }
         &:hover {
           img {
             transform: translateY(3px);
@@ -31,10 +45,16 @@ serviceページ共通ブロック
       .en2 {
         font-size:  clamp(12px, rem(14), 14px);
         letter-spacing: .04em;
+        @include mq {
+          font-size:  clamp(10px, rem(10), 10px);
+        }
       }
       .ttl {
         font-weight: bold;
         font-size:  clamp(14px, rem(16), 16px);
+        @include mq {
+          font-size:  clamp(10px, vwSP(11), 14px);
+        }
       }
       img {
         width: 7px;
@@ -50,12 +70,18 @@ serviceページ共通ブロック
   border-radius: rem(15);
   padding: rem(71) rem(106) rem(84);
   color: $color01;
+  @include mq {
+    padding: rem(40) rem(20) rem(40);
+  }
   &__ttl-01 {
     display: flex;
     align-items: center;
     column-gap: rem(12);
     font-size: rem(18);
     letter-spacing: .04em;
+    @include mq {
+      font-size:  clamp(14px, rem(14), 14px);
+    }
     &::before {
       content: '';
       width: rem(16);
@@ -69,12 +95,19 @@ serviceページ共通ブロック
     font-size:  clamp(22px, rem(28), 28px);
     line-height: 1.4;
     letter-spacing: .04em;
+    @include mq {
+      font-size:  clamp(16px, rem(18), 18px);
+      margin-top: rem(27);
+    }
   }
   &__txt {
     margin-top: rem(30);
     letter-spacing: .06em;
     line-height: 1.6;
     font-size:  clamp(14px, rem(16), 16px);
+    @include mq {
+      margin-top: rem(20);
+    }
   }
   &__list {
     margin-top: rem(50);
@@ -89,6 +122,11 @@ serviceページ共通ブロック
       align-items: center;
       letter-spacing: .06em;
       gap: rem(25);
+      @include mq {
+        display: grid;
+        padding: rem(55) rem(24);
+        gap: rem(17);
+      }
       &__ttl {
         line-height: 1.4;
         font-weight: bold;
@@ -102,12 +140,18 @@ serviceページ共通ブロック
           display: block;
           font-weight: normal;
           margin-bottom: rem(20);
+          @include mq {
+            font-size:  clamp(18px, rem(22), 22px);
+          }
         }
       }
       p {
         max-width: rem(420);
         line-height: 1.8;
         font-size:  clamp(14px, rem(16), 16px);
+        @include mq {
+          font-size:  clamp(12px, rem(12), 12px);
+        }
       }
       + .c-block-strength__list__item {
         margin-top: rem(34);
@@ -119,27 +163,47 @@ serviceページ共通ブロック
 // 内容
 .c-block-content {
   margin-top: rem(138);
+  @include mq {
+    margin-top: rem(60);
+  }
   &__head {
     display: flex;
     align-items: start;
     justify-content: space-between;
     padding: 0 rem(40);
     gap: rem(20);
+    @include mq {
+      display: grid;
+      gap: rem(40);
+      grid-template-columns: 100%;
+      padding: 0 rem(0);
+    }
   }
   &__ttl-01 {
     width: rem(117);
     min-width: 100px;
+    @include mq {
+      width: rem(99);
+      min-width: auto;
+    }
   }
   &__menu {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr;
     gap: rem(10);
+    @include mq {
+      grid-template-columns: repeat(2, 1fr);
+    }
     &__item {
       border-radius: rem(10);
       border: 1px solid rgba(255, 255, 255, 0.2);
       background-color: rgba(255, 255, 255, 0.1);
       padding: rem(13) rem(43);
+      @include mq {
+        padding: rem(13) rem(0);
+        border-radius: rem(6);
+      }
       a {
         display: flex;
         flex-direction: column;
@@ -152,6 +216,14 @@ serviceページ共通ブロック
         font-size:  clamp(13px, rem(14), 14px);
         letter-spacing: .06em;
         white-space: nowrap;
+        @include mq {
+          font-size:  clamp(10px, rem(11), 11px);
+        }
+        br {
+          @include mq {
+            display: none;
+          }
+        }
         &:hover {
           img {
             transform: translateY(3px);
@@ -168,6 +240,11 @@ serviceページ共通ブロック
     margin-top: rem(52);
     padding-bottom: rem(110);
     border-top: 1px solid $color02;
+    @include mq {
+      border-top: 0;
+      margin-top: rem(30);
+      padding-bottom: rem(50);
+    }
     &__item {
       padding: rem(40);
       border-bottom: 1px solid $color02;
@@ -175,9 +252,18 @@ serviceページ共通ブロック
       align-items: center;
       column-gap: rem(40);
       color: $white;
+      @include mq {
+        display: grid;
+        padding: rem(30) rem(0);
+        border-bottom: 0;
+      }
       figure {
         width: rem(260);
         min-width: 100px;
+        @include mq {
+          width: 100%;
+          margin-bottom: rem(15);
+        }
       }
       &__right {
         max-width: rem(764);
@@ -188,6 +274,9 @@ serviceページ共通ブロック
         font-size:  clamp(17px, rem(20), 20px);
         line-height: 1.4;
         letter-spacing: .1em;
+        @include mq {
+          font-size:  clamp(16px, rem(18), 18px);
+        }
       }
       &__txt {
         margin-top: rem(16);
@@ -202,6 +291,12 @@ serviceページ共通ブロック
         //font-size: rem(11);
         font-size:  clamp(10px, rem(11), 11px);
         line-height: 1.4;
+        @include mq {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: rem(10);
+          font-size: 12px;
+        }
         li {
           border: 1px solid $white;
           border-radius: rem(5);
@@ -220,6 +315,10 @@ serviceページ共通ブロック
 .c-block-faq {
   padding-top: rem(100);
   padding-bottom: rem(130);
+  @include mq {
+    padding-top: rem(60);
+    padding-bottom: rem(70);
+  }
   &__wrapper {
     background-color: $white;
     border-radius: rem(15);
@@ -228,6 +327,9 @@ serviceページ共通ブロック
     font-size:  clamp(13px, rem(14), 14px);
     line-height: 1.4;
     letter-spacing: .06em;
+    @include mq {
+      padding: rem(50) rem(20);
+    }
   }
 }
 .c-accordion {
@@ -238,7 +340,11 @@ serviceページ共通ブロック
     padding: rem(20) rem(88) rem(20) rem(23);
     position: relative;
     cursor: pointer;
-    border: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    @include mq {
+      font-size: 12px;
+      padding: rem(10) rem(50) rem(18) rem(20);
+    }
     &::before {
       position: absolute;
       content: "";
@@ -249,6 +355,9 @@ serviceページ共通ブロック
       right: rem(15);
       top: 50%;
       transform: translate(0, -50%);
+      @include mq {
+        width: rem(13);
+      }
     }
     &::after {
       position: absolute;
@@ -261,6 +370,9 @@ serviceページ共通ブロック
       top: 50%;
       transform: translate(0, -50%) rotate(90deg);
       transition: all .3s;
+      @include mq {
+        width: rem(13);
+      }
     }
     &.active {
       &::after {
@@ -286,6 +398,10 @@ serviceページ共通ブロック
           position: relative;
           top: rem(5);
           font-family: $English-font-family-02;
+          @include mq {
+            font-size: 20px;
+            margin-right: rem(10);
+          }
         }
       }
     }
@@ -296,6 +412,9 @@ serviceページ共通ブロック
     padding: rem(20) rem(88) rem(20) rem(23);
     border: 1px solid $color04;
     border: 0 0 5px 5px;
+    @include mq {
+      font-size: 12px;
+    }
     &.answer {
       span {
         display: flex;
@@ -307,6 +426,10 @@ serviceページ共通ブロック
           margin-right: rem(19);
           position: relative;
           top: rem(-5);
+          @include mq {
+            font-size: 20px;
+            margin-right: rem(10);
+          }
         }
       }
     }
@@ -328,7 +451,14 @@ serviceページ共通ブロック
 .c-block-relatedcompanies {
   background: $white;
   padding: rem(100) 0 rem(100);
+  @include mq {
+    padding: rem(80) 0 rem(80);
+  }
     .l-logo__list {
       margin-bottom: 0;
     }
+}
+
+.l-banner__solution+.l-link__bottom {
+  padding-top: rem(110);
 }

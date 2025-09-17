@@ -12,11 +12,19 @@
       letter-spacing: .1em;
       margin-top: rem(80);
       margin-bottom: rem(50);
+      @include mq {
+        margin-top: rem(40);
+        margin-bottom: rem(30);
+        font-size: clamp(18px, rem(20), 20px);
+      }
     }
     > p {
       line-height: 1.7;
       letter-spacing: .06em;
       font-size: clamp(14px, rem(16), 16px);
+      @include mq {
+        font-size: clamp(13px, rem(14), 14px);
+      }
       + p {
         margin-top: 1em;
       }
@@ -37,6 +45,9 @@
     font-size: clamp(20px, rem(28), 28px);
     line-height: 1.6;
     letter-spacing: .1em;
+    @include mq {
+      font-size: clamp(18px, rem(20), 20px);
+    }
   }
   &__tag {
     background-color: $color04;
@@ -47,14 +58,25 @@
     padding: rem(3) rem(14);
     border-radius: rem(30);
     margin-top: rem(20);
+    @include mq {
+      font-size: clamp(12px, rem(12), 12px);
+    }
   }
   &__date {
     font-size: clamp(12px, rem(14), 14px);
     margin-top: rem(30);
+    @include mq {
+      font-size: clamp(10px, rem(12), 12px);
+      margin-top: rem(20);
+    }
   }
   &__keyvisual {
     margin-top: rem(58);
     margin-bottom: rem(60);
+    @include mq {
+      margin-top: rem(50);
+      margin-bottom: rem(40);
+    }
   }
   &__leadtxt {
     font-size: clamp(16px, rem(18), 18px);
@@ -67,12 +89,20 @@
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: rem(15);
     padding: rem(40);
+    @include mq {
+      margin-top: rem(30);
+      margin-bottom: rem(50);
+      padding: rem(30) rem(20);
+    }
     h2 {
       font-size: clamp(16px, rem(18), 18px);
       letter-spacing: .06em;
       line-height: 1.4;
       font-weight: bold;
       margin-bottom: 0.7em;
+      @include mq {
+        font-size: clamp(14px, rem(14), 14px);
+      }
     }
     li {
       font-size: clamp(16px, rem(18), 18px);
@@ -80,6 +110,9 @@
       line-height: 1.8;
       margin-right: 1em;
       margin-left: 1em;
+      @include mq {
+        font-size: clamp(14px, rem(14), 14px);
+      }
       &::before {
         content: '・';
         margin-left: -1em;
@@ -185,35 +218,59 @@
   .p-section-voice {
     background: $white;
     padding: rem(100) 0;
+    @include mq {
+      padding: rem(80) 0;
+    }
     .p-section-voice__list {
-      background: $color04;
+      background: rgba(10, 16, 28, 0.10);
       color: $black-01;
       padding: rem(60);
       border-radius: rem(20);
-      display: grid;;
+      display: grid;
       gap: rem(60);
+      @include mq {
+        padding: rem(40) rem(20);
+        gap: rem(40);
+      }
       dl {
         display: flex;
         gap: rem(40);
         align-items: center;
+        @include mq {
+          gap: rem(20);
+        }
         dt {
           width: rem(100);
+          @include mq {
+            width: rem(63);
+          }
           img {
             width: rem(100);
             height: rem(100);
             display: block;
             border-radius: 100%;
+            @include mq {
+              width: rem(63);
+              height: rem(63);
+            }
           }
           p {
             font-size:  clamp(12px, rem(14), 14px);
             text-align: center;
             margin-top: rem(5);
             white-space: nowrap;
+            @include mq {
+              font-size: 10px;
+            }
           }
         }
         dd {
           width: calc(100% - rem(100) - rem(40));
           font-size:  clamp(13px, rem(14), 14px);
+          @include mq {
+            font-size: 13px;
+            width: calc(100% - rem(63) - rem(20));
+          }
         }
       }
     }
@@ -223,5 +280,8 @@
 .p-section__single-news {
   h2 {
     font-size: clamp(22px, rem(24), 24px);
+    @include mq {
+      font-size: clamp(18px, rem(20), 20px);
+    }
   }
 }

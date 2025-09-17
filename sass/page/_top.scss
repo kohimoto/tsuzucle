@@ -15,6 +15,10 @@ body {
   position: relative;
   overflow: hidden;
   aspect-ratio: 2880 / 1740;
+  @include mq {
+    aspect-ratio: auto;
+    padding-bottom: rem(94);
+  }
   &__img {
     width: 100vw;
     inset: 0 auto 0 0;
@@ -22,6 +26,10 @@ body {
     overflow: hidden;
     position: absolute;
     z-index: 2;
+    @include mq {
+      aspect-ratio: 2880 / 1740;
+      overflow: hidden;
+    }
   }
   &__content {
     position: absolute;
@@ -40,6 +48,11 @@ body {
       top: vwPC(80);
       max-width: vwPC(700);
     }
+    @include mq {
+      max-width: 100%;
+      position: relative;
+
+    }
     &__ttl {
       line-height: 1.25;
       font-size:  clamp(35px, vwPC(64), 80px);
@@ -47,8 +60,16 @@ body {
       font-weight: $medium;
       white-space: nowrap;
       text-align: right;
+      @include mq {
+        text-align: left;
+        padding: 0 rem(20);
+        font-size:  clamp(30px, vwSP(34), 40px);
+      }
       span {
         color: $black-01;
+        @include mq {
+          color: $white;
+        }
       }
     }
     &__txt {
@@ -57,8 +78,17 @@ body {
       line-height: 1.7;
       letter-spacing: .06em;
       text-align: right;
+      @include mq {
+        text-align: left;
+        font-size:  clamp(14px, vwSP(14), 16px);
+        padding: 0 rem(20);
+        margin-top: rem(15);
+      }
       span {
         color: $black-01;
+        @include mq {
+          color: $white;
+        }
       }
     }
     &__btn {
@@ -75,6 +105,16 @@ body {
       border-radius: rem(10);
       margin: rem(30) 0 0 auto;
       transition: all 0.3s;
+      @include mq {
+        font-size:  clamp(12px, vwSP(12), 16px);
+        width: auto;
+        height: auto;
+        padding: rem(15) rem(22);
+        gap: rem(10);
+        margin-top: rem(20);
+        margin-left: rem(20);
+        margin-right: auto;
+      }
       &:hover {
         opacity: 0.9;
       }
@@ -90,10 +130,15 @@ body {
     }
   }
   .p-section-keyvisual__images {
-  width: vwPC(967);
-  display: flex;
-  position: relative;
-  z-index: 1;
+    width: vwPC(967);
+    display: flex;
+    position: relative;
+    z-index: 1;
+    @include mq {
+      width: 100%;
+      aspect-ratio: 2880 / 1740;
+      overflow: hidden;
+    }
   }
 
   /**
@@ -156,12 +201,19 @@ body {
   background: $color04;
   padding: rem(60) 0;
   position: relative;
+  @include mq {
+    padding: rem(70) 0;
+  }
   &__text {
     font-size:  clamp(18px, rem(26), 26px);
     display: flex;
     gap: vwPC(160);
     place-content: center;
     margin-bottom: rem(30);
+    @include mq {
+      font-size:  clamp(12px, rem(13), 13px);
+      margin-bottom: rem(20);
+    }
     li {
       display: flex;
       align-items: center;
@@ -170,9 +222,16 @@ body {
       font-size:  clamp(40px, rem(75), 75px);
       color: $color03;
       margin: 0 rem(10);
+      @include mq {
+        font-size:  clamp(40px, rem(50), 50px);
+        margin: 0 rem(5);
+      }
     }
     small {
       font-size:  clamp(16px, rem(22), 22px);
+      @include mq {
+        font-size:  clamp(10px, rem(11), 11px);
+      }
     }
   }
   .logo-slider {
@@ -188,6 +247,10 @@ body {
     display: flex;
     animation: marquee 30s linear infinite;
     will-change: transform;
+    @include mq {
+      animation: marquee 15s linear infinite;
+
+    }
   }
 
   .logo-group {
@@ -198,15 +261,68 @@ body {
     list-style: none;
     margin: 0;
     padding: 0 20px; /* 両端にも余白を入れるのがポイント */
+    @include mq {
+      gap: 30px;
+      padding: 0 15px; /* 両端にも余白を入れるのがポイント */
+    }
   }
 
   .logo-group li {
     flex: 0 0 auto;
+    &:nth-child(1) {
+      width: 74px;
+      height: 60px;
+      @include mq {
+        width: 37px;
+        height: 30px;
+      }
+    }
+    &:nth-child(2) {
+      width: 121px;
+      height: 20px;
+      @include mq {
+        width: 65.5px;
+        height: 10px;
+      }
+    }
+    &:nth-child(3) {
+      width: 163px;
+      height: 50px;
+      @include mq {
+        width: 81.5px;
+        height: 25px;
+      }
+    }
+    &:nth-child(4) {
+      width: 217px;
+      height: 30px;
+      @include mq {
+        width: 108.5px;
+        height: 15px;
+      }
+    }
+    &:nth-child(5) {
+      width: 122px;
+      height: 40px;
+      @include mq {
+        width: 61px;
+        height: 20px;
+      }
+    }
+    &:nth-child(6) {
+      width: 311px;
+      height: 100px;
+      @include mq {
+        width: 105.5px;
+        height: 50px;
+      }
+    }
   }
 
   .logo-group img {
     display: block;
     height: auto;
+
   }
 
 }
@@ -225,7 +341,9 @@ body {
 ----------------------------------------------**/
 .p-section-service {
   padding: rem(120) 0;
-
+  @include mq {
+    padding: rem(60) 0;
+  }
   &__block {
     border-radius: rem(15);
     background: $color04;
@@ -234,17 +352,40 @@ body {
     align-items: center;
     gap: vwPC(100);
     padding: rem(35);
+    @include mq {
+      grid-template-columns: 100%;
+      padding: rem(50) rem(20) rem(48);
+    }
+    img {
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
     &__content {
       h3 {
         font-size:  clamp(25px, rem(40), 40px);
         letter-spacing: 0.04em;
         white-space: nowrap;
+        @include mq {
+          font-size:  clamp(30px, rem(34), 34px);
+        }
       }
       p {
         font-size:  clamp(14px, rem(18), 18px);
         margin-top: rem(20);
         margin-bottom: rem(25);
+        @include mq {
+          font-size: 12px;
+          margin-top: rem(10);
+          margin-bottom: rem(20);
+        }
       }
+    }
+  }
+  .c-btn__wrap {
+    @include mq {
+      display: flex;
+      place-content: end;
     }
   }
 }
@@ -256,10 +397,17 @@ body {
 .p-section__casestudy {
   background: $white;
   padding: rem(100) 0 rem(110);
+  @include mq {
+    padding: rem(80) 0 rem(40);
+  }
   .section-slider {
     margin-left: calc((100% - rem(1145)) / 2);
     @include xl {
       margin-left: rem(80);
+    }
+
+    @include sm {
+      margin-left: rem(20);
     }
   }
 }
@@ -270,6 +418,9 @@ body {
 .p-section__top {
   .l-link__bottom {
     padding: rem(130) 0 rem(90);
+    @include mq {
+      padding: rem(80) 0 rem(90);
+    }
   }
 }
 
@@ -279,6 +430,12 @@ body {
 .p-news {
   background: $color04;
   padding: rem(100) 0;
+  @include mq {
+    padding: rem(60) 0 rem(80);
+  }
+  .c-btn-01 {
+    display: none;
+  }
 }
 
 
@@ -288,9 +445,15 @@ body {
 .p-section__solution {
   color: $white;
   padding-bottom: rem(155);
+  @include mq {
+    padding-bottom: rem(70);
+  }
   .p-section__solution__list {
     display: grid;
     gap: rem(40);
+    @include mq {
+      gap: rem(30);
+    }
     &__card {
       border-radius: rem(15);
       position: relative;
@@ -304,6 +467,9 @@ body {
         position: absolute;
         left: 0;
         top: 0;
+        @include mq {
+          background-image: url(../images/common/cover-sp.png);
+        }
       }
       &:nth-child(1) {
         background-image: url(../images/top/solution01.webp);
@@ -319,6 +485,13 @@ body {
           position: absolute;
           left: rem(30);
           top: rem(40);
+          @include mq {
+            width: rem(100);
+            height: rem(32);
+            left: rem(20);
+            top: rem(30);
+            z-index: 2;
+          }
         }
       }
       &:nth-child(2) {
@@ -335,6 +508,13 @@ body {
           position: absolute;
           left: rem(30);
           top: rem(40);
+          @include mq {
+            width: rem(100);
+            height: rem(32);
+            left: rem(20);
+            top: rem(31);
+            z-index: 2;
+          }
         }
       }
       &:nth-child(3) {
@@ -351,6 +531,13 @@ body {
           position: absolute;
           left: rem(30);
           top: rem(40);
+          @include mq {
+            width: rem(159);
+            height: rem(28);
+            left: rem(28);
+            top: rem(33);
+            z-index: 2;
+          }
         }
       }
     }
@@ -363,42 +550,61 @@ body {
       padding: rem(180) rem(50) rem(60);
       @include lg {
         width: calc(430px + rem(100));
+        padding: rem(210) rem(18) rem(18);
+      }
+      @include mq {
+        width: 100%;
       }
       h3 {
         font-size: clamp(18px, rem(28), 28px);
+        font-weight: $bold;
+        @include mq {
+          font-size: clamp(16px, rem(18), 18px);
+        }
       }
       &>p {
         font-size: clamp(14px, rem(16), 16px);
         padding: rem(14) 0 rem(30);
+        @include mq {
+          font-size: clamp(12px, rem(12), 12px);
+          padding: rem(10) 0 rem(18);
+        }
       }
       &-tag {
         background: rgba($white, 0.1);
         padding: rem(18);
         border-radius: rem(10);
+        @include mq {
+          padding: rem(18) rem(25);
+        }
         p {
           font-size: 10px;
           font-weight: $bold;
           margin-bottom: rem(8);
+          @include mq {
+            font-size: 11px;
+          }
           small {
             margin-right: rem(5);
           }
         }
         div {
           display: flex;
-          //flex-wrap: wrap;
+          flex-wrap: wrap;
           gap: rem(5);
           position: relative;
           span {
             border: 1px solid rgba($white, 0.7);
             font-size: 11px;
-            padding: rem(9) rem(5);
+            font-weight: $bold;
+            padding: rem(5) rem(10);
             min-width: 60px;
             text-align: center;
             display: flex;
             align-items: center;
             place-content: center;
-            border-radius: rem(10);
-            height: 49px;
+            border-radius: rem(5);
+            height: 25px;
             white-space: nowrap;
             &.etc {
               border: none;

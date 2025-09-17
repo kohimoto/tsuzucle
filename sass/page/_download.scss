@@ -1,9 +1,17 @@
 @use "global" as *;
 .p-section__download {
+  .c-ttl-01 {
+    @include mq {
+      font-size:  clamp(24px, rem(28), 28px);
+      white-space: nowrap;
+    }
+  }
   .p-download__list {
     padding-bottom: rem(112);
+    @include mq {
+      padding-bottom: rem(80);
+    }
   }
-
   .l-card__list {
     padding-bottom: rem(60);
   }

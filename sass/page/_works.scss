@@ -4,13 +4,24 @@
     display: flex;
     gap: rem(30);
     margin-bottom: rem(80);
+    @include mq {
+      gap: rem(15) vwSP(25);
+      flex-wrap: wrap;
+      margin-bottom: rem(50);
+    }
   }
   .p-works__list {
     padding-bottom: rem(112);
+    @include mq {
+      padding-bottom: rem(80);
+    }
   }
   .l-card__list {
     padding-bottom: rem(80);
-      }
+    @include mq {
+      padding-bottom: rem(50);
+    }
+  }
   .card {
     color: $white;
     .card-tag {

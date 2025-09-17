@@ -121,6 +121,9 @@ $mediaquerys: (
 @function vwPC($pixels, $base: 1440) {
   @return math.div($pixels, $base) * 100vw;
 }
+@function vwSP($pixels, $base: 390) {
+  @return math.div($pixels, $base) * 100vw;
+}
 
 html body .sp {
   display: none;

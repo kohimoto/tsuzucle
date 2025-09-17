@@ -2,9 +2,15 @@
 .p-section__member {
   .l-banner {
     padding-bottom: rem(205);
+    @include mq {
+      padding-bottom: rem(140);
+    }
   }
   .p-member__list {
     padding-bottom: rem(112);
+    @include mq {
+      padding-bottom: rem(80);
+    }
     a {
       display: block;
       transition: all 0.3s;
@@ -25,6 +31,10 @@
     gap: rem(40);
     width: 100%;
     padding-bottom: rem(60);
+    @include mq {
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(40) rem(20);
+    }
   }
 
   .p-member__list__card-image {
@@ -46,14 +56,27 @@
     display: grid;
     gap: rem(8);
     margin-top: rem(16);
+    @include mq {
+      gap: rem(5);
+      margin-top: rem(12);
+    }
   }
   .p-member__list__card-name {
     font-size:  clamp(16px, rem(18), 18px);
+    @include mq {
+      font-size:  clamp(13px, rem(14), 14px);
+    }
   }
   .p-member__list__card-kana {
     font-size:  clamp(12px, rem(14), 14px);
+    @include mq {
+      font-size: 11.28px;
+    }
   }
   .p-member__list__card-position {
     font-size:  clamp(12px, rem(14), 14px);
+    @include mq {
+      font-size: 11.28px;
+    }
   }
 }
