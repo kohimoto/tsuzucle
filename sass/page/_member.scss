@@ -89,22 +89,26 @@
     width: 82.9vw;
     height: calc(100% - rem(35));
     z-index: 100;
-    display: flex;
+    //display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 14.5%;
-    padding-right: 13.6%;
+    padding-left: 0;
+    padding-right: 0;
     @include mq {
-      width: 90vw;
-      height: calc(100% - rem(28));
-      padding: rem(80);
+      width: calc(100% - rem(20));
+      height: calc(100% - rem(160));
+      padding: rem(70) rem(20);
       align-items: start;
-      overflow-y: scroll;
+      @media (orientation: landscape){
+        height: 95vh;
+      }
+
     }
      @include sm {
       padding-left: rem(20);
       padding-right: rem(20);
     }
+
     &__close {
       position: absolute;
       top: rem(30);
@@ -120,8 +124,8 @@
       @include mq {
         top: rem(20);
         right: rem(20);
-        width: rem(46);
-        height: rem(46);
+        width: rem(32);
+        height: rem(32);
       }
       &::before, &::after {
         content: '';
@@ -146,14 +150,34 @@
       display: flex;
       align-items: center;
       column-gap: rem(50);
+      height: 100%;
+
+    }
+    .p-member__list__card__modal__flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: rem(50);
+      width: rem(790);
+      margin: 0 auto;
       @include mq {
-        flex-direction: column;
+        //flex-direction: column;
         row-gap: rem(25);
+        column-gap: rem(20);
+        align-items: start;
+        width: vwSP(330);
+      }
+      &>img {
+        width: rem(272);
+        @include mq {
+          width: vwSP(125);
+          @media (orientation: landscape){
+            width: 120px;
+          }
+        }
       }
     }
-    img {
-      max-width: rem(272);
-    }
+
     &__content {
       .name {
         font-size: rem(28);
@@ -206,6 +230,12 @@
         font-size:  clamp(12px, rem(14), 14px);
         @include mq {
           margin-top: rem(19);
+          overflow-y: scroll;
+          max-height: rem(300);
+          font-size:  clamp(11px, rem(11), 11px);
+          @media (orientation: landscape){
+            max-height: rem(120);
+          }
         }
         p + p {
           margin-top: 1em;
