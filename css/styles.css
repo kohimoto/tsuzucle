@@ -3808,3 +3808,114 @@ serviceページ共通ブロック
     font-size: clamp(18px, 1.25rem, 20px);
   }
 }
+
+.p-contact {
+  margin-bottom: 7rem;
+  max-width: 58rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 767px) {
+  .p-contact {
+    margin-bottom: 5.5625rem;
+  }
+}
+.p-contact dt {
+  font-size: clamp(12px, 0.875rem, 14px);
+  line-height: 2;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+@media screen and (max-width: 767px) {
+  .p-contact dt {
+    font-size: 12px;
+  }
+}
+.p-contact dd {
+  margin-top: 0.8125rem;
+}
+@media screen and (max-width: 767px) {
+  .p-contact dd {
+    margin-top: 0.625rem;
+  }
+}
+.p-contact dd input[type=text], .p-contact dd input[type=email], .p-contact dd textarea {
+  background-color: #fff;
+  border-radius: 0.3125rem;
+  width: 100%;
+  font-size: clamp(12px, 0.875rem, 14px);
+  line-height: 2;
+  letter-spacing: 0.1em;
+  padding: 1.0625rem 1.5625rem 1.1875rem;
+}
+@media screen and (max-width: 767px) {
+  .p-contact dd input[type=text], .p-contact dd input[type=email], .p-contact dd textarea {
+    font-size: 12px;
+    padding: 0.8125rem 1.25rem 0.9375rem;
+  }
+}
+.p-contact dd input[type=text]::-webkit-input-placeholder, .p-contact dd input[type=email]::-webkit-input-placeholder, .p-contact dd textarea::-webkit-input-placeholder {
+  color: #9FB1CF;
+}
+.p-contact dd input[type=text]::-moz-placeholder, .p-contact dd input[type=email]::-moz-placeholder, .p-contact dd textarea::-moz-placeholder {
+  color: #9FB1CF;
+}
+.p-contact dd input[type=text]:-ms-input-placeholder, .p-contact dd input[type=email]:-ms-input-placeholder, .p-contact dd textarea:-ms-input-placeholder {
+  color: #9FB1CF;
+}
+.p-contact dd input[type=text]::-ms-input-placeholder, .p-contact dd input[type=email]::-ms-input-placeholder, .p-contact dd textarea::-ms-input-placeholder {
+  color: #9FB1CF;
+}
+.p-contact dd input[type=text]::placeholder, .p-contact dd input[type=email]::placeholder, .p-contact dd textarea::placeholder {
+  color: #9FB1CF;
+}
+.p-contact dl + dl {
+  margin-top: 2rem;
+}
+@media screen and (max-width: 767px) {
+  .p-contact dl + dl {
+    margin-top: 1.5625rem;
+  }
+}
+.p-contact .l-button__wrap {
+  border: 1px solid #fff;
+  margin-top: 4.875rem;
+  margin-left: auto;
+  max-width: 16.5rem;
+  border-radius: 0.625rem;
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .p-contact .l-button__wrap {
+    margin-top: 3.875rem;
+  }
+}
+.p-contact .l-button__wrap input[type=submit] {
+  color: #fff;
+  padding: 0.84375rem 4rem 0.84375rem 2.5rem;
+}
+@media screen and (max-width: 767px) {
+  .p-contact .l-button__wrap input[type=submit] {
+    padding: 0.625rem 3.1875rem 0.625rem 2rem;
+  }
+}
+.p-contact .l-button__wrap img {
+  position: absolute;
+  right: 2.5rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 0.875rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media screen and (max-width: 767px) {
+  .p-contact .l-button__wrap img {
+    width: 12px;
+    right: 2rem;
+  }
+}
+.p-contact .l-button__wrap:hover img {
+  -webkit-transform: translateX(0.25rem) translateY(-50%);
+          transform: translateX(0.25rem) translateY(-50%);
+}
