@@ -105,3 +105,29 @@ $(".c-accordion__ttl").click(function () {
   $(this).siblings(".c-accordion__content").stop().slideToggle();
   $(this).toggleClass("active");
 });
+
+// モーダル
+$(function() {
+  // カードクリックでモーダル表示
+  $(".p-member__list__card-wrap li > a").on("click", function(e) {
+    e.preventDefault();
+
+    // このaタグの次にあるモーダルを取得
+    const $modal = $(this).siblings(".p-member__list__card__modal");
+
+    // 表示（fadeInなど好きな演出に変更可）
+    $modal.fadeIn();
+  });
+
+  // モーダル内の閉じるボタンで非表示
+  $(".p-member__list__card__modal__close").on("click", function() {
+    $(this).closest(".p-member__list__card__modal").fadeOut();
+  });
+
+  // モーダル背景クリックで閉じる（任意）
+  $(".p-member__list__card__modal").on("click", function(e) {
+    if ($(e.target).is(".p-member__list__card__modal")) {
+      $(this).fadeOut();
+    }
+  });
+});
