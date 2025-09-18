@@ -230,7 +230,7 @@
         font-size:  clamp(12px, rem(14), 14px);
         @include mq {
           margin-top: rem(19);
-          overflow-y: scroll;
+          overflow-y: auto;
           max-height: rem(300);
           font-size:  clamp(11px, rem(11), 11px);
           @media (orientation: landscape){
