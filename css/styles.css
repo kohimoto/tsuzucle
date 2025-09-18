@@ -3899,23 +3899,29 @@ serviceページ共通ブロック
     padding: 0.625rem 3.1875rem 0.625rem 2rem;
   }
 }
-.p-contact .l-button__wrap img {
+.p-contact .l-button__wrap::after {
+  content: "";
+  display: block;
   position: absolute;
   right: 2.5rem;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   width: 0.875rem;
+  height: 0.5625rem;
+  background-image: url("../images/common/arrow-contact.svg");
+  background-repeat: no-repeat;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 @media screen and (max-width: 767px) {
-  .p-contact .l-button__wrap img {
+  .p-contact .l-button__wrap::after {
     width: 12px;
+    height: 7px;
     right: 2rem;
   }
 }
-.p-contact .l-button__wrap:hover img {
+.p-contact .l-button__wrap:hover::after {
   -webkit-transform: translateX(0.25rem) translateY(-50%);
           transform: translateX(0.25rem) translateY(-50%);
 }

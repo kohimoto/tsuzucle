@@ -65,20 +65,26 @@
         padding: rem(10) rem(51) rem(10) rem(32);
       }
     }
-    img {
+    &::after {
+      content: '';
+      display: block;
       position: absolute;
       right: rem(40);
       top: 50%;
       transform: translateY(-50%);
       width: rem(14);
+      height: rem(9);
+      background-image: url('../images/common/arrow-contact.svg');
+      background-repeat: no-repeat;
       transition: all .3s;
       @include mq {
         width: 12px;
+        height: 7px;
         right: rem(32);
       }
     }
     &:hover {
-      img {
+      &::after {
         transform: translateX(rem(4)) translateY(-50%);
       }
     }
