@@ -10,10 +10,10 @@
       font-size: clamp(20px, rem(28), 28px);
       line-height: 1.4;
       letter-spacing: .1em;
-      margin-top: rem(80);
+      margin-top: rem(20);
       margin-bottom: rem(50);
       @include mq {
-        margin-top: rem(40);
+        margin-top: rem(20);
         margin-bottom: rem(30);
         font-size: clamp(18px, rem(20), 20px);
       }
@@ -34,6 +34,10 @@
         position: relative;
         display: flex;
         margin-bottom: rem(5);
+        font-size: clamp(14px, rem(16), 16px);
+        @include mq {
+          font-size: clamp(13px, rem(14), 14px);
+        }
         &::before {
           content: "・";
           padding-left: 0em;
@@ -61,21 +65,31 @@
     @include mq {
       font-size: clamp(12px, rem(12), 12px);
     }
+    &+.p-section__single__tag {
+      margin-left: rem(10);
+    }
   }
   &__date {
     font-size: clamp(12px, rem(14), 14px);
     margin-top: rem(30);
+    margin-bottom: rem(60);
     @include mq {
       font-size: clamp(10px, rem(12), 12px);
-      margin-top: rem(20);
+      margin-bottom: rem(40);
     }
   }
   &__keyvisual {
     margin-top: rem(58);
     margin-bottom: rem(60);
+    overflow: hidden;
+    border-radius: rem(15);
     @include mq {
       margin-top: rem(50);
       margin-bottom: rem(40);
+    }
+    img {
+      aspect-ratio: 950.455 / 534.793;
+      object-fit: cover;
     }
   }
   &__leadtxt {

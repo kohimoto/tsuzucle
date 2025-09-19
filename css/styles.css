@@ -141,7 +141,7 @@ html body .pc {
 
 body {
   color: #0A101C;
-  font-family: "Yu Gothic", "sans-serif";
+  font-family: "Figtree", "Yu Gothic", "sans-serif";
   font-weight: 500;
 }
 
@@ -150,7 +150,7 @@ h1, h2, h3, h4 {
 }
 
 .ja {
-  font-family: "Yu Gothic", "sans-serif";
+  font-family: "Figtree", "Yu Gothic", "sans-serif";
 }
 
 .en {
@@ -229,6 +229,7 @@ a {
   backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 1.1875rem 1.875rem;
+  overflow: visible !important;
 }
 @media screen and (max-width: 767px) {
   .l-header__inner {
@@ -356,6 +357,28 @@ a {
   margin-top: 0.625rem;
   text-align: center;
   line-height: 1.5;
+}
+.l-header .child__menu {
+  display: none;
+  position: absolute;
+  z-index: 101;
+  gap: 0.625rem;
+  padding: 0.9375rem 0.9375rem;
+  background: rgba(255, 255, 255, 0.5);
+  top: 1.0625rem;
+  font-family: "Figtree", "sans-serif";
+  border-radius: 0.3125rem 0.3125rem 0.3125rem 0.3125rem;
+  color: #0A101C;
+}
+.l-header .child__menu li {
+  letter-spacing: 0.05em;
+}
+.l-header .child__menu li + li {
+  margin-top: 0.625rem;
+}
+.l-header .midnightHeader,
+.l-header .midnightInner {
+  overflow: visible !important;
 }
 
 .l-header__inner {
@@ -1493,6 +1516,7 @@ Tsuzucleバナー
 .l-banner__solution .l-banner__solution__block p {
   font-size: clamp(14px, 1rem, 16px);
   text-align: center;
+  color: #0A101C;
 }
 @media screen and (max-width: 767px) {
   .l-banner__solution .l-banner__solution__block p {
@@ -3709,12 +3733,12 @@ serviceページ共通ブロック
   font-size: clamp(20px, 1.75rem, 28px);
   line-height: 1.4;
   letter-spacing: 0.1em;
-  margin-top: 5rem;
+  margin-top: 1.25rem;
   margin-bottom: 3.125rem;
 }
 @media screen and (max-width: 767px) {
   .p-section__single__inner > h2 {
-    margin-top: 2.5rem;
+    margin-top: 1.25rem;
     margin-bottom: 1.875rem;
     font-size: clamp(18px, 1.25rem, 20px);
   }
@@ -3738,6 +3762,12 @@ serviceページ共通ブロック
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 0.3125rem;
+  font-size: clamp(14px, 1rem, 16px);
+}
+@media screen and (max-width: 767px) {
+  .p-section__single__inner ul li {
+    font-size: clamp(13px, 0.875rem, 14px);
+  }
 }
 .p-section__single__inner ul li::before {
   content: "・";
@@ -3768,25 +3798,36 @@ serviceページ共通ブロック
     font-size: clamp(12px, 0.75rem, 12px);
   }
 }
+.p-section__single__tag + .p-section__single__tag {
+  margin-left: 0.625rem;
+}
 .p-section__single__date {
   font-size: clamp(12px, 0.875rem, 14px);
   margin-top: 1.875rem;
+  margin-bottom: 3.75rem;
 }
 @media screen and (max-width: 767px) {
   .p-section__single__date {
     font-size: clamp(10px, 0.75rem, 12px);
-    margin-top: 1.25rem;
+    margin-bottom: 2.5rem;
   }
 }
 .p-section__single__keyvisual {
   margin-top: 3.625rem;
   margin-bottom: 3.75rem;
+  overflow: hidden;
+  border-radius: 0.9375rem;
 }
 @media screen and (max-width: 767px) {
   .p-section__single__keyvisual {
     margin-top: 3.125rem;
     margin-bottom: 2.5rem;
   }
+}
+.p-section__single__keyvisual img {
+  aspect-ratio: 950.455/534.793;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .p-section__single__leadtxt {
   font-size: clamp(16px, 1.125rem, 18px);

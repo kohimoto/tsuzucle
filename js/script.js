@@ -1,7 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 jQuery(function ($) {
-
   // この中であればWordpressでも「$」が使用可能になる
   var topBtn = $(".l-pagetop");
   // ボタンをクリックしたらスクロールして上に戻る
@@ -115,16 +114,37 @@ $(function() {
 
     $modal.fadeIn();
   });
-
   // モーダル内の閉じるボタンで非表示
   $(".p-member__list__card__modal__close").on("click", function() {
     $(".p-member__list__card__modal").fadeOut();
   });
-
   // モーダル背景クリックで閉じる（任意）
   $(".p-member__list__card__modal").on("click", function(e) {
     if ($(e.target).is(".p-member__list__card__modal")) {
       $(this).fadeOut();
+    }
+  });
+});
+
+jQuery(function($){
+  $(".l-header__list__havchild").hover(
+    function() {
+      $(this).children(".child__menu")
+        .stop(true, true)
+        .slideDown(200);
+    },
+    function() {
+      $(this).children(".child__menu")
+        .stop(true, true)
+        .slideUp(200);
+    }
+  );
+});
+jQuery(function($){
+  $('.js-term-jump').on('change', function(){
+    var url = $(this).val();
+    if(url){
+      window.location.href = url;
     }
   });
 });

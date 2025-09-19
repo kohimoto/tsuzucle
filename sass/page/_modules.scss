@@ -28,6 +28,7 @@
     backdrop-filter: blur(10px);
     border-radius: 10px;
     padding: rem(19) rem(30);
+    overflow: visible !important;
     @include mq {
       padding: rem(10) rem(20);
     }
@@ -133,6 +134,28 @@
         }
       }
     }
+  }
+  .child__menu {
+    display: none;
+    position: absolute;
+    z-index: 101;
+    gap: rem(10);
+    padding: rem(15) rem(15);
+    background: rgba($white, 0.5);
+    top: rem(17);
+    font-family: $English-font-family-02;
+    border-radius: rem(5) rem(5) rem(5) rem(5);
+    color: $black-01;
+    li {
+      letter-spacing: 0.05em;
+      &+li {
+        margin-top: rem(10);
+      }
+    }
+  }
+  .midnightHeader,
+  .midnightInner {
+  overflow: visible !important;
   }
 }
 //midnight js用
@@ -1031,6 +1054,7 @@ Tsuzucleバナー
     p {
       font-size:  clamp(14px, rem(16), 16px);
       text-align: center;
+      color: $black-01;
       @include mq {
         font-size:  clamp(12px, rem(13), 13px);
       }
