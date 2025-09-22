@@ -88,5 +88,8 @@
         transform: translateX(rem(4)) translateY(-50%);
       }
     }
+    .wpcf7-spinner {
+      display: none !important;
+    }
   }
 }

@@ -4188,3 +4188,6 @@ serviceページ共通ブロック
   -webkit-transform: translateX(0.25rem) translateY(-50%);
           transform: translateX(0.25rem) translateY(-50%);
 }
+.p-contact .l-button__wrap .wpcf7-spinner {
+  display: none !important;
+}
