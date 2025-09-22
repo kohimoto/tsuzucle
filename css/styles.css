@@ -4191,3 +4191,6 @@ serviceページ共通ブロック
 .p-contact .l-button__wrap .wpcf7-spinner {
   display: none !important;
 }
+.p-contact .wpcf7-response-output {
+  color: #fff;
+}
